@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Analyzing Factors for Advertisement Click Rate</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			h1 {
+			  font-size: 30px;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<!-- <a href="education.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+									<ul class="icons">
+										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> -->
+										<li><a href="https://www.linkedin.com/in/ying-liu-4b45a8195/" class="icon brands fa-linkedin" style="font-size:24px"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/yingliu1206" class="icon brands fa-github" style="font-size:24px"><span class="label">GitHub</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1 style="display: flex; justify-content: space-between; align-items: center;">Analyzing Factors for Advertisement Click Rate
+                                            <a style="font-size: 13px;" href="https://github.com/yingliu1206/Analyzing-Factors-for-Advertisement-Click-Rate--with-PySpark" class="button big">Repo Link</a>
+                                          </h1>                                          
+                                       
+									</header>
+
+									<hr class="major" id = 'ctr_content'/>
+
+									<div class="major">
+										<article style="width: 100%; height: 100%;">										
+											<div class="content">
+                                                <h1>Executive Summary</h1>
+                                                    <hr style="border-top: dashed 2px #964B00;">
+
+                                                <h2 style = "font-size: 23px">Background</h2>
+                                                    <p style = "font-size: 16px">An online advertising company has two main types of ads on its website: contextual ads and non-contextual ads.</p>
+
+                                                <h2 style = "font-size: 23px">Goal</h2>
+                                                    <p style = "font-size: 16px">The goal of the project is to study the factors that affect the click event so that the company can improve service quality and increase the click rate. By enhancing these aspects, the company aims to bring more benefits for product companies and ultimately attract more customers to post these two kinds of advertisements on their website.</p>
+
+                                                <h2 style = "font-size: 23px">Methodology</h2>
+                                                    <p style = "font-size: 16px">Firstly, exploratory data analysis (EDA) was conducted on ads and users information to identify patterns and relationships among variables. Subsequently, the datasets were merged, missing values were deleted, and the merged dataset was prepared for training a logistic regression model. As it was a binary classification problem, variables such as 'AdID', 'Position', 'HistCTR', 'CategoryID', 'Price', and 'Title' were included in the logistic regression model.</p>
+
+                                                <h2 style = "font-size: 23px">Results</h2>
+                                                    <p style = "font-size: 16px">The analysis revealed that product companies of category '34' were the largest customers of the online advertising company, and non-contextual ads mostly targeted location '3953' and '3960'. The most popular browser family among users was '25' and the most common device was '2014'. The logistic regression model, with features such as position of the ad, history-based estimation of click-through rate, type of ads, price for an ad, and ad title, can be used to predict the click event with reasonable accuracy.</p>
+
+                                                <h2 style = "font-size: 23px">Future work</h2>
+                                                    <p style = "font-size: 16px">Future work can focus on finding the missing column that recorded user's phone request in the data 'combined_stream'. This information can be used as the label class to research the important factors that may affect the click event on non-contextual ads.</p>
+
+
+                                                <h1 style="display: flex; justify-content: space-between; align-items: center;">Datasets
+                                                    <a style="font-size: 13px;" href="https://github.com/yingliu1206/Analyzing-Factors-for-Advertisement-Click-Rate--with-PySpark/blob/main/dataset-and-requirements.md" class="button big">Details</a>
+                                                </h1>
+                                                    <hr style="border-top: dashed 2px #964B00;">
+                                                
+                                                    <span class="image object">
+                                                        <img src="images/ctr_data_diag.jpg" alt="ctr_data_diag" width="890" height="700">
+                                                    </span>
+
+                                                    <p style = "font-size: 16px; margin-top: 25px;">The whole dataset consists of 7 files, which were divided into two categories based on their features: contextual ads and non-contextual ads.</p>
+                                                        <ul style="font-size: 16px; line-height: 2;">
+                                                            <li style="margin-top: 10px;">The contextual ads category includes 'search_click'.</li>
+                                                            <li style="margin-top: 10px;">The non-contextual ads category includes 'combined_stream'. </li>
+                                                            <li style="margin-top: 10px;">'ad_info', 'search_info', 'location', 'category', and 'user_info' serve as base datasets for the two categories. </li>
+                                                        </ul> 
+                                                    <p style = "font-size: 16px">Therefore, the analysis was also segmented into two parts. For contextual ads, data 'search_click' and 'ad_info' were joined to form a merged dataset with 7 unique fields, while data 'combined_stream', 'ad_info', and 'search_info' were joined to form a merged dataset for non-contextual ads. The goal was to build a clickthrough rate prediction model for both contextual and non-contextual ads.</p>
+                                                        
+                                                <h1>Methods</h1>
+                                                <hr style="border-top: dashed 2px #964B00;">  
+                                                
+                                                <h2 style = "font-size: 23px">Tools</h2>
+                                                <p style = "font-size: 16px">The following tools were used in the project:</p>
+                                                    <ul style="font-size: 16px; line-height: 2;">
+                                                        <li style="margin-top: 10px;">SparkSession to manage the big data.</li>
+                                                        <li style="margin-top: 10px;">Spark.read to read in all the files. </li>
+                                                        <li style="margin-top: 10px;">Spark.sql to explore the data, such as merging, counting, and summarizing. </li>
+                                                        <li style="margin-top: 10px;">describe() to obtain summary statistics.</li>
+                                                        <li style="margin-top: 10px;">createOrReplaceTempView() to convert dataframes into SQL tables. </li>
+                                                        <li style="margin-top: 10px;">df.na.drop() to clean the data by dropping NA values. </li>
+                                                        <li style="margin-top: 10px;">df.toPandas() to convert the data into 'pandas.core.frame.DataFrame' format.</li>
+                                                        <li style="margin-top: 10px;">The matplotlib package to visualize the SQL result. </li>
+                                                        <li style="margin-top: 10px;">Transformers and encoders to perform feature engineering. </li>
+                                                        <li style="margin-top: 10px;">LogisticRegression to build the model to predict whether there is a click on the contextual ads.</li>
+                                                        <li style="margin-top: 10px;">Pipeline to chain the process. </li>
+                                                    </ul> 
+                                                    
+                                                <h2 style = "font-size: 23px">Exploratory Data Analysis</h2>  
+                                                <p style = "font-size: 16px">Upon loading the complete dataset, thorough exploration of the ads and users information was performed.</p>
+                                                <p style = "font-size: 16px">For the ads information:</p>
+                                                    <ul style="font-size: 16px; line-height: 2;">
+                                                        <li style="margin-top: 10px;">Summary statistics such as mean value, standard deviation, minimum and maximum value were computed for the ads' price.</li>
+                                                        <li style="margin-top: 10px;">The average price of ads for different categories and the number of ads for each category were determined. </li>
+                                                        <li style="margin-top: 10px;">The average price of non-contextual ads targeted at different locations, along with the number of non-contextual ads for each location, were analyzed. </li>
+                                                    </ul> 
+                                                
+                                                <p style = "font-size: 16px">For the users' information:</p>
+                                                    <ul style="font-size: 16px; line-height: 2;">
+                                                        <li style="margin-top: 10px;">the most frequently used browser family and device type were identified.</li>
+                                                    </ul> 
+                                          
+                                                <h2 style = "font-size: 23px">Data Preparation</h2>
+                                                    <ul style="font-size: 16px; line-height: 2;">
+                                                        <li style="margin-top: 10px;">The 'search_click' and 'ad_info' dataframes were registered as SQL tables and joined using the 'left join' syntax.</li>
+                                                        <li style="margin-top: 10px;">The column 'IsClick' was transformed into a categorical variable and categorized into a new column called "IsClick_class". </li>
+                                                        <li style="margin-top: 10px;">The data types of the remaining fields were checked:
+                                                            <ul style = "list-style-type: circle; margin-bottom: 10px;"> 
+                                                                <li style="margin-top: 10px;">'IsClick_class' and 'title' were STRING</li>
+                                                                <li style="margin-top: 10px;">The rest were INT.</li>
+                                                            </ul>	
+                                                        </li>
+                                                    </ul> 
+                                                   
+                                                    
+                                                <h2 style = "font-size: 23px">Hypothesis</h2>
+                                                <p style = "font-size: 16px">Position, HistCTR, Category, Price, and Title are statistically significant variables which can influence the IsClick_class.</p>   
+                                                    
+                                                <h2 style = "font-size: 23px">Model</h2>
+                                                <p style = "font-size: 16px">A logistic regression model was adopted for prediction of the categorical outcome variable 'IsClick_class' based on the set of predictors. The categorical variables were indexed using StringIndexer and then converted into one-hot encoded variables using OneHotEncoder. The feature columns were combined using VectorAssembler, and a Pipeline was used to specify the machine learning workflow.</p>   
+                                                <p style = "font-size: 16px; margin-bottom: 30px;">To evaluate the performance of the model, the ROC curve was plotted, and the AUC value was calculated. The AUC value was found to be 0.72, indicating good predictive performance.</p>   
+                                                <span class="image object;" style = "margin-bottom: 30px;">
+                                                    <img src="images/roc_curve.jpg" alt="roc_curve" width="540" height="450">
+                                                </span>
+                                                    
+                                                <h1>Conclusions</h1>
+                                                <hr style="border-top: dashed 2px #964B00;"> 
+                                                <p style = "font-size: 16px">After conducting the EDA analysis, several key findings were identified. The online advertising company had a total of 36,892,885 ads, with an average price of approximately 4,651,622.64 dollars. Category 19 had the highest average price of ads, while category 8 had the lowest. Category 34 ads were the most popular, while category 8 ads had the fewest customers. The company may need to adjust the promotion mode for category 8 ads to improve their visibility.</p>
+                                                <p style = "font-size: 16px">Non-contextual ads primarily targeted locations 3953 and 3960, with the highest average price of non-contextual ads at location 3682. The most commonly used browser family was type 25, and the most commonly used device was type 2014. The company can compare the attractiveness of the type 25 browser interface and the reader-friendliness of category 8 device type to identify factors that attract customers and improve service quality.</p>
+                                                <p style = "font-size: 16px">The model identified position, HistCTR, category, price, and title as important variables that influence click events. The company can focus on these variables to increase the click rate, which ultimately leads to higher ad visibility and profitability.</p>
+
+                                                <h1>Future Work</h1>
+                                                <hr style="border-top: dashed 2px #964B00;">
+                                                <p style = "font-size: 16px">In the future, additional work can be done to improve the analysis. One possible step is to locate the missing column that records user phone requests in the "combined_stream" dataset. This column can be used as the label class to be predicted. Relevant datasets can be joined with "combined_stream," and variables that may help predict the label can be selected. Transformers and Encoders can be used to prepare the data for model training.</p>
+                                                <p style = "font-size: 16px">If it is a binary classification problem, the logistic regression model can be used. For multiple classification problems, decision trees and random forests are viable options. Model accuracy can be evaluated based on metrics such as AUC. This will help to identify the significant factors that affect click events on both contextual and non-contextual ads. The company can then take steps to increase click rates and attract more product companies to post advertisements on the website.</p>
+
+
+     
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                   
+											</div>
+										</article>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+				<div id="sidebar">
+					<div class="inner">
+
+						<!-- Search -->
+							<section id="search" class="alt">
+								<form method="post" action="#">
+									<input type="text" name="query" id="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Menu -->
+							<nav id="menu">
+								<header class="major">
+									<h2>Menu</h2>
+								</header>
+								<ul>
+									<li><a href="index.html">About me</a></li>
+									<li><a href="education.html">Education</a></li>
+									<li><a href="work.html">Work Experience</a></li>
+									<li><a href="elements.html">Elements</a></li>
+									<li>
+										<span class="opener">Submenu</span>
+										<ul>
+											<li><a href="#">Lorem Dolor</a></li>
+											<li><a href="#">Ipsum Adipiscing</a></li>
+											<li><a href="#">Tempus Magna</a></li>
+											<li><a href="#">Feugiat Veroeros</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Etiam Dolore</a></li>
+									<li><a href="#">Adipiscing</a></li>
+									<li>
+										<span class="opener">Another Submenu</span>
+										<ul>
+											<li><a href="#">Lorem Dolor</a></li>
+											<li><a href="#">Ipsum Adipiscing</a></li>
+											<li><a href="#">Tempus Magna</a></li>
+											<li><a href="#">Feugiat Veroeros</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Maximus Erat</a></li>
+									<li><a href="#">Sapien Mauris</a></li>
+									<li><a href="#">Amet Lacinia</a></li>
+								</ul>
+							</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Get in touch</h2>
+								</header>
+								<p>Thanks for visiting my website! If you'd like to get in touch with me, here are a few options:</p>
+								<ul class="contact">
+									<li class="icon solid fa-envelope"><a href="#">ying.liu0331@gmail.com</a></li>
+									<li class="icon solid fa-phone" style = "margin-bottom: -10px;">(341) 345-7248</li>
+									<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li> -->
+								</ul>
+							</section>
+
+						<!-- Footer -->
+							<footer id="footer">
+								<p class="copyright">&copy; 2023 Ying Liu. All rights reserved.</p>
+								<p class="copyright">This website is intended solely for use in job interviews and is not intended for public distribution. All information contained herein is the property of Ying Liu and may not be reproduced or used without permission.</p>
+							</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
