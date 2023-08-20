@@ -1720,11 +1720,12 @@ button,
           margin: -2em 0 0 -2em;
           width: 4em; } 
       .features article .image {
-        max-width: 60%; 
+        width: 3em; 
+        height: 2em;
         margin-right: 0; 
       }
     h3 {
-      font-size: 0.9em; } }
+      font-size: 1em; } }
   @media screen and (max-width: 480px) {
     .features article .icon:before {
       font-size: 1.25rem; } }
