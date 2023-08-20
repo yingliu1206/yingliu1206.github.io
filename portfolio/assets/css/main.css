@@ -176,10 +176,6 @@ h6 {
   h2 {
     font-size: 1.5em; } }
 
-@media screen and (max-width: 480px) {
-  h3 {
-    font-size: 0.8em; } }
-
 sub {
   font-size: 0.8em;
   position: relative;
@@ -1720,9 +1716,9 @@ button,
         .features article .icon:before {
           font-size: 1.5rem; }
         .features article .icon:after {
-          height: 4em;
-          margin: -2em 0 0 -2em;
-          width: 4em; } }
+          content:none;}
+        .features article .text {
+            text-align:right;} }
   @media screen and (max-width: 480px) {
     .features article .icon:before {
       font-size: 1.25rem; } }
