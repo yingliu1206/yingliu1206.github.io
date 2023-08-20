@@ -176,6 +176,10 @@ h6 {
   h2 {
     font-size: 1.5em; } }
 
+@media screen and (max-width: 480px) {
+  h3 {
+    font-size: 0.8em; } }
+
 sub {
   font-size: 0.8em;
   position: relative;
