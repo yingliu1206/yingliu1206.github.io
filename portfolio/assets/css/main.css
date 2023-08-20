@@ -1728,6 +1728,7 @@ button,
         -webkit-flex-shrink: 1;
         -ms-flex-shrink: 1;
         flex-shrink: 1;
+        width: 50%
       }
       .features article .content{
         -moz-flex-grow: 1;
@@ -1738,6 +1739,7 @@ button,
         -webkit-flex-shrink: 1;
         -ms-flex-shrink: 1;
         flex-shrink: 1;
+        min-width: 0;
       }}
   @media screen and (max-width: 480px) {
     .features article .icon:before {
