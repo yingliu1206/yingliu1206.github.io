@@ -1721,7 +1721,8 @@ button,
           width: 4em; } 
       .features article .image {
         display: block;
-        width: 50%;
+        height: 4em;
+        width: 4em;
         margin-right: 0; 
       }
       .features article .image:after {
