@@ -1718,18 +1718,7 @@ button,
         .features article .icon:after {
           height: 4em;
           margin: -2em 0 0 -2em;
-          width: 4em; } 
-      .features article .image {
-        display: block;
-        height: 4em;
-        width: 4em;
-        margin-right: 0; 
-      }
-      .features article .image:after {
-        height: 3em;
-        width: 5em;
-        margin-right: 0; 
-      }}
+          width: 4em; } }
   @media screen and (max-width: 480px) {
     .features article .icon:before {
       font-size: 1.25rem; } }
