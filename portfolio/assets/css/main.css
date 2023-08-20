@@ -1721,7 +1721,7 @@ button,
           width: 4em; } 
       .features article .image {
         display: block;
-        width: 100%;
+        width: 50%;
         margin-right: 0; 
       }
     h3 {
