@@ -1728,7 +1728,7 @@ button,
         -webkit-flex-shrink: 1;
         -ms-flex-shrink: 1;
         flex-shrink: 1;
-        width: 100%;
+        width: 30%;
       }}
   @media screen and (max-width: 480px) {
     .features article .icon:before {
