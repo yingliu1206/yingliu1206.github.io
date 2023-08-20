@@ -1719,7 +1719,7 @@ button,
           height: 4em;
           margin: -2em 0 0 -2em;
           width: 4em; } 
-      .features article .image object{
+      .features article .image img{
         -moz-flex-grow: 1;
         -webkit-flex-grow: 1;
         -ms-flex-grow: 1;
