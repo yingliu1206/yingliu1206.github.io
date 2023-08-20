@@ -1709,16 +1709,20 @@ button,
       -ms-align-items: -ms-flex-start;
       align-items: flex-start; }
       .features article .icon {
-        height: 3em;
+        height: 6em;
         line-height: 6em;
         margin: 0 0 1.5em 0;
-        width: 2em; }
+        width: 6em; }
         .features article .icon:before {
           font-size: 1.5rem; }
         .features article .icon:after {
           height: 4em;
           margin: -2em 0 0 -2em;
           width: 4em; } 
+      .features article .image {
+        max-width: 60%; 
+        margin-right: 0; 
+      }
     h3 {
       font-size: 0.9em; } }
   @media screen and (max-width: 480px) {
