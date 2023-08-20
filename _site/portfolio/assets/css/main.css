@@ -1724,8 +1724,11 @@ button,
         width: 50%;
         margin-right: 0; 
       }
-    h3 {
-      font-size: 1em; } }
+      .features article .image:after {
+        height: 3em;
+        width: 5em;
+        margin-right: 0; 
+      }}
   @media screen and (max-width: 480px) {
     .features article .icon:before {
       font-size: 1.25rem; } }
