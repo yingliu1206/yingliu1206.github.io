@@ -1,0 +1,527 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Fraud Detection In Health Care</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			h1 {
+			  font-size: 1.8em;
+			}
+            h3 {
+            margin-top: 20px; /* Add margin between h3 headings */
+            }
+            p{
+              font-size: 1.1em;
+            }
+            li {
+                margin-top: 0.2em;
+                font-size: 1.1em;
+            }
+            img {
+            max-width: 100%;
+            height: auto;
+        }
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<!-- <a href="education.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+									<ul class="icons">
+										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> -->
+										<li><a href="https://www.linkedin.com/in/ying-liu-4b45a8195/" class="icon brands fa-linkedin" style="font-size:1.5em"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/yingliu1206" class="icon brands fa-github" style="font-size:1.5em"><span class="label">GitHub</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1 style="display: flex; justify-content: space-between; align-items: center;">Fraud Detection In Health Care
+                                            <a style="font-size: 0.35em;" href="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/tree/v2" class="button big">Repo Link</a>
+                                          </h1>                                          
+                                       
+									</header>
+
+									<hr class="major" id = 'healthcare'/>
+
+									<div class="major">
+										<article>										
+											<div class="content">
+                                                <h2>Project Background</h2>
+                                                <hr>
+                                                <p>Medicare provider fraud poses a critical threat to the sustainability of the Medicare system. Government reports indicate that fraudulent claims have significantly inflated Medicare spending. Often orchestrated by organized crime networks, these fraudulent activities involve collusion among providers, physicians, and beneficiaries to submit deceptive claims.</p>
+                                                <p>Provider fraud manifests in various forms, including:</p>
+                                                <ul>
+                                                    <li>Billing for services that were not provided.</li>
+                                                    <li>Submitting duplicate claims for the same service.</li>
+                                                    <li>Misrepresenting the services provided.</li>
+                                                    <li>Charging for more complex or expensive services than were actually delivered.</li>
+                                                    <li>Billing for a covered service when a non-covered service was provided.</li>
+                                                </ul>
+
+                                                <h2>Problem Statement</h2>
+                                                <hr>
+                                                <p>The goal of this project is to predict potentially fraudulent healthcare providers based on their profile features. By analyzing various data points, including the number of claims filed, operating areas, specialties, common diagnosis codes, procedure codes, total reimbursement amounts, and other relevant information, we aim to develop a robust predictive model. Additionally, we seek to identify key variables that are instrumental in detecting potentially fraudulent providers.</p>
+                                                
+                                                <h2>Project Objectives</h2>
+                                                <hr>
+                                                <h3>Develop a Predictive Model</h3>
+                                                <p>Create a machine learning model that accurately predicts whether a provider is likely to be involved in fraudulent activities.</p>
+                                                <h3>Feature Analysis</h3>
+                                                <p>Identify the most significant features that contribute to the prediction of fraudulent behavior.</p>
+                                                <h3>Validation and Testing</h3>
+                                                <p>Ensure the model's reliability and accuracy through rigorous validation and testing.</p>
+                                                
+                                                <h2>Dataset</h2>
+                                                <hr>
+                                                <p>We are considering the following datasets for this project:</p>
+                                                <ul>
+                                                    <li><b>Inpatient Data:</b> Insights into claims filed for patients admitted to hospitals, including details such as admission and discharge dates, and admission diagnosis codes.</li>
+                                                    <li><b>Outpatient Data:</b> Information about claims filed for patients who visit hospitals but are not admitted.</li>
+                                                    <li><b>Beneficiary Details Data:</b> Includes beneficiary Know Your Customer (KYC) details, such as health conditions and the region they belong to.</li>
+                                                    <li><b>Provider Data:</b> Consists of two columns: Provider ID and the label PotentialFraud (Yes/No).</li>
+                                                </ul>
+
+                                                <h2>Feature Engineering</h2>
+                                                <hr>
+                                                <p>Since we don't have labels for each claim, we cannot directly join the datasets by provider_id and assign the provider label to each claim. Instead, we will create features that represent the provider and then attach them to the provider data.
+
+                                                </p>
+                                                <h3>Features from Inpatient Data (grouped by provider)</h3>
+                                                <ul>
+                                                    <li>Average inpatient claims per patient</li>
+                                                    <li>Average inpatient reimbursement amount per claim</li>
+                                                    <li>Average inpatient deductible amount per claim</li>
+                                                    <li>Average inpatient claim length</li>
+                                                    <li>Average hospital stay per claim</li>
+                                                    <li>Average number of physicians attending a claim</li>
+                                                    <li>Average number of types of physicians per claim</li>
+                                                    <li>Most frequent ClmAdmitDiagnosisCode</li>
+                                                    <li>Most frequent DiagnosisGroupCode</li>
+                                                    <li>Most frequent ClmDiagnosisCode</li>
+                                                </ul>
+                                                <h3>Features from Outpatient Data (grouped by provider)</h3>
+                                                <ul>
+                                                    <li>Average outpatient claims per patient</li>
+                                                    <li>Average outpatient reimbursement amount per claim</li>
+                                                    <li>Average outpatient deductible amount per claim</li>
+                                                    <li>Average outpatient claim length</li>
+                                                    <li>Average number of physicians attending a claim</li>
+                                                    <li>Average number of types of physicians per claim</li>
+                                                    <li>Most frequent ClmAdmitDiagnosisCode</li>
+                                                    <li>Most frequent ClmDiagnosisCode</li>
+                                                </ul>
+                                                <h3>Features from Beneficiary Data (grouped by provider)</h3>
+                                                <ul>
+                                                    <li>Mortality rate: Calculate the proportion of deceased patients among all patients for each provider.</li>
+                                                    <li>Average patient age: Calculate the average age of patients for each provider.</li>
+                                                    <li>Distinct count of states: Count the number of unique states from which patients come for each provider.</li>
+                                                    <li>Distinct count of counties: Count the number of unique counties from which patients come for each provider.</li>
+                                                    <li>Average Charlson Comorbidity Index (CCI) of patients for each provider: Calculate the average CCI score of patients for each provider.</li>
+                                                </ul>
+
+                                                <h2>EDA Analysis</h2>
+                                                <hr>
+                                                <h3>Comparison between label 1 and 0 on numerical columns</h3>
+                                                <div class="image-group">
+                                                    <img src="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/assets/71619071/0e7ce3ca-8c99-4aad-b00a-834c40b82800" alt="Comparison on numerical columns">
+                                                </div>
+                                                <h3>Comparison between label 1 and 0 on categorical columns</h3>
+                                                <div class="image-group">
+                                                    <img class="full-width" src="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/assets/71619071/fb1d1f30-c2a1-43ab-acdf-291e8aa99688" alt="Comparison on categorical columns">
+                                                    <img class="full-width" src="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/assets/71619071/5c7f6244-f559-427c-9e60-d5781598a3ad" alt="Comparison on categorical columns">
+                                                    <img class="full-width" src="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/assets/71619071/6ff6f0c6-4e29-43b2-9417-de7914f77a2b" alt="Comparison on categorical columns">
+                                                </div>
+
+                                                <h2>Data Preprocessing</h2>
+                                                <hr>
+                                                <h3>Process null values</h3>
+                                                <ul>
+                                                    <li>Replace numeric null values with 0, as these null values indicate that the provider doesn’t have corresponding inpatient or outpatient records.</li>
+                                                    <li>Replace categorical null values with 'None'.</li>
+                                                </ul>
+                                                <h3>Process outliers</h3>
+                                                <ul>
+                                                    <li>Use the Interquartile Range (IQR) method to set the lower bound as Q1 - 1.5 * IQR and the upper bound as Q3 + 1.5 * IQR.</li>
+                                                    <li>Cap the top 5% of values to perform winsorization on the upper tail.</li>
+                                                </ul>
+                                                <h3>Check Correlation Among Features</h3>
+                                                <ul>
+                                                    <li>Calculate the Spearman's Rank Correlation Coefficient and visualize the correlation matrix to identify highly correlated features.</li>
+                                                    <li>Discover 11 sets of features with correlation coefficients exceeding 0.7.</li>
+                                                    <li>Feature Engineering:</li>
+                                                        <ul>
+                                                            <li>Eliminate features based on their point biserial correlation with the target variable.</li>
+                                                            <li>Combine and create new columns:</li>
+                                                                <ul>
+                                                                    <li>'avg_ip_cost': (avg_ip_reimbursement_per_claim + avg_ip_deductible_per_claim) * 'avg_ip_claims_per_pat'</li>
+                                                                    <li>'area_range': num_County + num_State</li>
+                                                                </ul>
+                                                        </ul>
+                                                </ul>
+                                                <h3>Label Encoding Categorical Features</h3>
+                                                <p>Transform categorical features into numerical values using label encoding.</p>
+                                                <h3>Split Data into Train, Validation, and Test Datasets</h3>
+                                                <p>Divide the dataset into training, validation, and test sets for model evaluation.</p>
+                                                <h3>Normalize Features</h3>
+                                                <p>Fit a MinMaxScaler on the training data to normalize feature scales and then apply the same scaler to the validation and test sets.</p>
+                                                
+                                                <h2>Modeling</h2>
+                                                <hr>
+                                                <h3>Models: SVM, Decision Tree, Random Forest, XGBoost</h3>
+                                                <ul>
+                                                    <li>Use GridSearchCV to find the best parameters, focusing on maximizing recall as the priority metric.
+                                                    </li>
+                                                        <ul>
+                                                            <li>Given the critical nature of fraud detection, where missing potential fraudulent cases carries higher risk than falsely flagging non-fraudulent ones, prioritizing recall ensures a focus on accurately identifying fraudulent instances.</li>
+                                                        </ul>
+                                                    <li>Train the Model with the Best Parameters</li>
+                                                    <li>Evaluate the Model on the Validation Dataset</li>
+                                                </ul>
+
+                                                <h3>Compare the performance of models</h3>
+                                                <img src="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/assets/71619071/ef7450b2-9e37-47ac-9aae-8c15d3f55d1f" alt="Model Comparison" width="1017">
+
+                                                <h3>Model Selection and Retraining</h3>
+                                                <ul>
+                                                    <li>Considering the performance metrics, XGBoost outperforms other models and is selected.</li>
+                                                    <li>Merge the training and validation datasets, and retrain the chosen XGBoost model.</li>
+                                                    <li>Evaluate the model's performance on the test dataset to obtain validation scores.</li>
+                                                </ul>
+
+                                                <p><strong>Evaluation Metrics:</strong></p>
+                                                <table>
+                                                    <tr>
+                                                        <th>Metric</th>
+                                                        <th>XGBoost</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Accuracy</td>
+                                                        <td>79.57%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Recall</td>
+                                                        <td>85.09%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Precision</td>
+                                                        <td>32.23%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AUC</td>
+                                                        <td>88.26%</td>
+                                                    </tr>
+                                                </table>
+
+                                                <p><strong>Confusion matrix:</strong></p>
+                                                <img src="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/assets/71619071/61c2d5a5-384b-4166-be41-26ba247cd86f" alt="Confusion Matrix" width="371">
+
+                                                <p><strong>ROC Curve:</strong></p>
+                                                <img src="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/assets/71619071/b237893e-3fb2-4f33-99a1-b15b80bd1de7" alt="ROC Curve" width="688">
+
+                                                <h2>Conclusions</h2>
+                                                <hr>
+                                                <p>From EDA analysis, fraudulent providers tend to exhibit distinct patterns compared to non-fraudulent ones in terms of the number of states, number of counties, outpatient reimbursement, and outpatient deductible amount. They often submit higher outpatient reimbursement claims and incur higher deductible amounts. Moreover, fraudulent providers typically operate across a wider geographic area and involve multiple physicians and physician types in a claim.</p>
+                                                <p>There is no clear discernible difference in the behavioral patterns of fraudulent providers regarding their diagnosis and procedure codes. This could be influenced by feature selection, as only the most frequent codes were considered. However, in reality, rare codes may serve as more indicative signals of fraud.</p>
+                                                <p>From the XGBoost model, important features for classifying claims are listed as below:</p>
+                                                <img src="https://github.com/yingliu1206/Fraud-detection-In-Health-Care/assets/71619071/4bec3f91-c946-46a3-a258-9f20ea320427" alt="Important Features" width="873">
+
+                                                <p>Notable features include total inpatient cost, modality rate, and area range. These important features align with the key differences observed during EDA. Additionally, the plot highlights the significance of outpatient claims per patient as an influential factor.</p>
+
+                                                <h2>Limitations</h2>
+                                                <hr>
+                                                <p>The label is assigned to providers, not individual claims. Therefore, merging the label with each claim by using the "provider_id" is not ideal. As a result, we reframed the problem to focus on identifying features of fraudulent providers rather than fraudulent claims. However, in reality, even providers with a high likelihood of being fraudulent may have both legitimate and fraudulent claims. Directing attention to all their claims may result in resource wastage. Thus, it would be more efficient to label each claim and train a model to predict the probability of fraudulent claims. This approach could yield more actionable insights.</p>
+
+                                                <h2>Future Work</h2>
+                                                <hr>
+                                                <ul>
+                                                    <li>Exploring better data resources for claims.</li>
+                                                    <li>Extracting the top 5 diagnosis codes and procedure codes and utilizing Doc2Vec for feature transformation.</li>
+                                                    <li>Implementing a script in a pipeline format to streamline the workflow.</li>
+                                                </ul>
+
+                                                <h2>Technical Takeaways</h2>
+                                                <hr>
+                                                <h3>Outliers Detection:</h3>
+                                                <ul>
+                                                    <li>Z-score:</li>
+                                                        <ul>
+                                                            <li>(data - mean)/std</li>
+                                                            <li>If abs(Z-score) &gt; 3, then outliers</li>
+                                                        </ul>
+                                                    
+                                                    <li>Interquartile Range (IQR):</li>
+                                                        <ul>
+                                                            <li>Q1 = np.percentile(data, 25)</li>
+                                                            <li>Q3 = np.percentile(data, 75)</li>
+                                                            <li>IQR(Interquartile Range ) = Q3 - Q1</li>
+                                                            <li>lower_bound = Q1 - 1.5 * IQR</li>
+                                                            <li>upper_bound = Q3 + 1.5 * IQR</li>
+                                                            <li>Identify outliers, whether they result from human error or extreme values.</li>
+                                                        </ul>
+                                                    
+                                                </ul>
+
+                                                <p>eg. calculate 30th percentile</p>
+                                                <ol>
+                                                    <li>Sort the Data: [15, 20, 35, 40, 50]</li>
+                                                    <li>Number of Observations: n=5</li>
+                                                    <li>Calculate the Rank (Index): (n+1) * 30/100 -&gt; 6*0.3 = 1.8 Since 1.8 is not an integer, interpolate between the 1st and 2nd values in the sorted list.</li>
+                                                    <li>Interpolate</li>
+                                                        <ul>
+                                                            <li>The 1st value is 15.</li>
+                                                            <li>The 2nd value is 20.</li>
+                                                            <li>The fractional part of R is 0.8.</li>
+                                                            <li>15 + 0.8*(20-15) = 19</li>
+                                                        </ul>
+                                                    
+                                                </ol>
+
+                                                <h3>Outliers Handling:</h3>
+                                                <ul>
+                                                    <li>Simply removing outliers from the dataset, typically useful for addressing human errors.</li>
+                                                    <li>Clipping: setting outliers to predefined boundary values, providing a more controlled approach to handling extreme values.</li>
+                                                    <li>Winsorization: rather than setting them to the boundary values directly, winsorization replaces extreme values with less extreme values within a specified percentile range.</li>
+                                                    <li>Apply robust scaling followed by min-max scaling to address outliers. It’s important to note that while robust scaling doesn’t constrain features to a specific range, we still need to apply another scaler before fitting the data into the model.</li>
+                                                        <ul>
+                                                            <li>Robust scaling: (x-median)/(percentile(75) - percentile(25))</li>
+                                                        </ul>
+                                                    
+                                                </ul>
+
+                                                <h3>Log Transformation with Shifting on Right-Skewed Columns</h3>
+                                                <p>Apply log transformation to right-skewed columns to normalize the distribution. Add a constant shift to handle zero or negative values. But it cannot convert all features to normal distribution.</p>
+
+                                                <h3>Encoding</h3>
+                                                <p>When the column values are in list format, one-hot encoding is possible. However, if there are too many distinct values in the column, it can lead to sparse data issues.</p>
+
+                                                <h3>Multicollinearity</h3>
+                                                <h4>Correlation Measurement</h4>
+                                                <ul>
+                                                    <li>Pearson correlation coefficient = Cov(X,Y)/(stdev(X)*stdev(Y))</li>
+                                                        <ul>
+                                                            <li>Both variables should be continuous and approximately normally distributed.</li>
+                                                            <li>The relationship between the variables should be linear.</li>
+                                                            <li>Constant variance of the variables</li>
+                                                        </ul>
+                                                    
+                                                    <li>Spearman's Rank Correlation Coefficient = Cov(X_rank,Y_rank)/(stdev(X_rank)*stdev(Y_rank))</li>
+                                                        <ul>
+                                                            <li>Convert the data to ranks and then apply Pearson's correlation formula to the ranks.</li>
+                                                            <li>Can be used with ordinal, interval, or ratio data.</li>
+                                                            <li>Does not require the relationship to be linear, only monotonic (consistently increasing or decreasing).</li>
+                                                        </ul>
+                                                    
+                                                    <li>VIF: variance inflation factor quantifies how much the variance of a regression coefficient is inflated due to multicollinearity in the model.</li>
+                                                        <ul>
+                                                            <li>Fit the Regression model of Each Predictor on Others:</li>
+                                                                <ul>
+                                                                    <li>Regress X1​ on X2​ and X3​.</li>
+                                                                    <li>Regress X2​ on X1​ and X3​.</li>
+                                                                    <li>Regress X3​ on X1​ and X2​.</li>
+                                                                </ul>
+                                                            
+                                                            <li>Calculation of R-squared:</li>
+                                                                <ul>
+                                                                    <li>R-squared = 1- (residual sum of squares/ total sum of squares)</li>
+                                                                    <li>For each regression, compute the R-squared value, which represents how well the predictor can be explained by the other predictors.</li>
+                                                                </ul>
+                                                            
+                                                            <li>Compute VIF:</li>
+                                                                <ul>
+                                                                    <li>Use the formula VIF(Xi​)=1−1/Ri-squared​​ to compute VIF for each predictor.</li>
+                                                                    <li>Higher R-squared corresponds to higher VIF. This indicates that the predictor is more susceptible to being predicted by other features.</li>
+                                                                </ul>
+                                                            
+                                                        </ul>
+                                                    
+                                                </ul>
+
+                                                <h4>Dealing with Highly-Correlated Columns:</h4>
+                                                <ul>
+                                                    <li>Utilize Domain Knowledge:</li>
+                                                        <ul>
+                                                            <li>Consider the significance of each feature within the problem domain.</li>
+                                                        </ul>
+                                                    
+                                                    <li>Check correlation with the target variable: </li>
+                                                        <ul>
+                                                            <li>use the point-biserial correlation coefficient to evaluate how well each continuous feature correlates with the binary target variable. Features with higher absolute values of the point-biserial correlation are more strongly associated with the target and may be considered more important.</li>
+                                                        </ul>
+                                                   
+                                                    <li>PCA:</li>
+                                                        <ul>
+                                                            <li>While PCA does not require features to adhere to a normal distribution, it assumes linearity. Principal components can be interpreted as combinations of the original features.</li>
+                                                        </ul>
+                                                    
+                                                    <li>Remove Features with VIF &gt; 10:</li>
+                                                        <ul>
+                                                            <li>If multiple features need to be dropped, calculate the variance inflation factor (VIF) dynamically.</li>
+                                                        </ul>
+                                                    
+                                                    <li>Feature Importance Analysis: </li>
+                                                        <ul>
+                                                            <li>For instance, in Random Forest or Gradient Boosting models, train the model with both sets of highly correlated features and assess the importance scores. Retain the feature with the higher importance score.</li>
+                                                        </ul>
+                                                   
+                                                    <li>Feature Engineering:</li>
+                                                        <ul>
+                                                            <li>Combine or create new features to mitigate multicollinearity.</li>
+                                                        </ul>
+                                                </ul>
+                                                
+                                                <h3>Modeling:</h3>
+                                                <ul>
+                                                    <li>Weight of Evidence (WOE) and Information Value (IV) in logistic regression</li>
+                                                        <ul>
+                                                            <li>Information value is not an optimal feature selection method when you are building a classification model other than binary logistic regression (for eg. random forest or SVM) as conditional log odds (which we predict in a logistic regression model) is highly related to the calculation of weight of evidence.</li>
+                                                        </ul>
+                                                    <li>The prerequisites for logistic regression:</li>
+                                                    <ul>
+                                                        <li>binary target</li>
+                                                        <li>no multicollinearity between the predictor variables</li>
+                                                        <li>linear relationship between the logit (log-odds) of the outcome and each predictor variable (lr assumption)</li>
+                                                        <li>prefer large sample size</li>
+                                                        <li>problem with extreme outliers</li>
+                                                    </ul>
+                                                    <li>Models that do not have strict assumptions about multicollinearity are generally those that are non-linear or ensemble-based methods. These models do not require the predictors to be independent of each other and can handle correlated features better than linear models. eg. decision tree, random forests, XGBoost, SVM, KNN, neural networks.</li>
+                                                    
+                                                    <li>Hyperparameters tuning:</li>
+                                                    <ul>
+                                                        <li>Setting class_weight parameters to 'balanced' can help address imbalanced labels.</li>
+                                                        <li>Utilizing a fixed random_state ensures deterministic behavior during model fitting.</li>
+                                                        <li>Both GridSearchCV and RandomizedSearchCV allow the n_jobs parameter to be set to -1, utilizing all available cores for parallel processing.</li>
+                                                        <li>XG_Boost overfitting:</li>
+                                                            <ul>
+                                                                <li>lower max_depth</li>
+                                                                <li>increase min_child_weight: ensure nodes with fewer observations are not split.</li>
+                                                                <li>gamma: increase the minimum loss reduction required to make a split</li>
+                                                                <li>decrease the learning rate(eta) and increase the number of trees to ensure the model learns more slowly and generalizes better.</li>
+                                                                <li>regularization: reg_alpha - L1, reg_lambda - L2</li>
+                                                            </ul>
+                                                        
+                                                    </ul>
+                                                </ul>
+											</div>
+										</article>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+                <!-- Sidebar -->
+                <div id="sidebar">
+                    <div class="inner">
+
+                        <!-- Search -->
+                            <section id="search" class="alt">
+                                <form method="post" action="#">
+                                    <input type="text" name="query" id="query" placeholder="Search" />
+                                </form>
+                            </section>
+
+                        <!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">About me</a></li>
+										<li><a href="education.html">Education</a></li>
+										<li><a href="work.html">Work Experience</a></li>
+										<li>
+											<span class="opener">Personal Projects</span>
+											<ul>
+                                                <li><a href="healthcare_fraud.html">Fraud Detection In Health Care</a></li>
+												<li><a href="ctr_rate.html">Analyzing Factors for Advertisement Click Rate</a></li>
+												<li><a href="https://github.com/yingliu1206/Obesity-Level-Classification-Application">Obesity Classification and Data Analysis via Machine Learning</a></li>
+												<!-- <li><a href="app_fish.html">Fish Weight Prediction App</a></li> -->
+												<!-- <li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
+											</ul>
+										</li>
+										<!-- <li><a href="elements.html">Elements</a></li>
+										<li>
+											<span class="opener">Another Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li> -->
+									</ul>
+								</nav>
+
+                        <!-- Section -->
+                        <section>
+                            <header class="major">
+                                <h2>Certifications</h2>
+                            </header>
+                            <div class="mini-posts" style="text-align:center;">
+                                <article>
+                                    <a href="#" class="image"><img src="images/AWS-Certified-ML.jpg" alt="AWS Certified ML" style="display: inline-block; width: 12em;"/></a>
+                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">AWS Certified Machine Learning - Specialty</p>								
+                                    </article>
+                                <article>
+                                    <a href="#" class="image"><img src="images/tableau_cert.jpg" alt="Tableau" style="display: inline-block; width: 12em;"/></a>
+                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">Tableau Desktop Specialist</p>
+                                </article>
+                                <article>
+                                    <a href="#" class="image"><img src="images/aws-architeching.png" alt="AWS Knowledge: Architecting" style="display: inline-block; width: 12em;"/></a>
+                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">AWS Knowledge: Architecting</p>
+                                </article>
+                            </div>
+                            <!-- <ul class="actions">
+                                <li><a href="#" class="button">More</a></li>
+                            </ul> -->
+                        </section>
+
+                        <!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Get in touch</h2>
+                                </header>
+                                <p>Thanks for visiting my website! If you'd like to get in touch with me, here are a few options:</p>
+                                <ul class="contact">
+                                    <li class="icon solid fa-envelope"><a href="#">ying.liu0331@gmail.com</a></li>
+                                    <li class="icon solid fa-phone" style = "margin-bottom: -1em;">(341) 345-7248</li>
+                                    <!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                                        Nashville, TN 00000-0000</li> -->
+                                </ul>
+                            </section>
+
+                        <!-- Footer -->
+                            <footer id="footer">
+                                <p class="copyright">&copy; 2023 Ying Liu. All rights reserved.</p>
+                                <p class="copyright">This website is intended solely for use in job interviews and is not intended for public distribution. All information contained herein is the property of Ying Liu and may not be reproduced or used without permission.</p>
+                            </footer>
+
+                    </div>
+                </div>
+
+        </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
