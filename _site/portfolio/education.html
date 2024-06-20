@@ -218,6 +218,11 @@
 								</form>
 							</section>
 
+							</section>
+							<section id="results">
+								<!-- Search results will be displayed here -->
+							</section>
+
 						<!-- Menu -->
 						<nav id="menu">
 							<header class="major">
@@ -308,43 +313,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				// Function to perform search
-				function performSearch(query) {
-					// Get all sections with class 'major' (your education sections)
-					var sections = document.querySelectorAll('.major');
-			
-					// Loop through each section
-					sections.forEach(function(section) {
-						// Check if section text content contains the search query
-						var sectionText = section.textContent.toLowerCase();
-						if (sectionText.includes(query.toLowerCase())) {
-							// Show the section if it matches the query
-							section.style.display = 'block';
-						} else {
-							// Hide the section if it does not match the query
-							section.style.display = 'none';
-						}
-					});
-				}
-			
-				// Handle form submission
-				document.getElementById('search-form').addEventListener('submit', function(event) {
-					event.preventDefault(); // Prevent default form submission
-			
-					var query = document.getElementById('query').value.trim(); // Get search query
-			
-					if (query.length > 0) {
-						performSearch(query); // Perform search
-					} else {
-						// If query is empty, show all sections
-						var sections = document.querySelectorAll('.major');
-						sections.forEach(function(section) {
-							section.style.display = 'block';
-						});
-					}
-				});
-			</script>
+			<script src="assets/js/search.js"></script>
 			
 
 	</body>

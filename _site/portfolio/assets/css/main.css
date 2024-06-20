@@ -2091,6 +2091,16 @@ button,
         top: 1em;
         width: 5em; } }
 
+  #results {
+    display: none; /* Initially hide the results section */
+    margin: 0; /* Ensure no margin */
+    padding: 0; /* Ensure no padding */
+  }
+
+  #results.has-results {
+    display: block; /* Show results section when it has results */
+  }
+      
 /* Header */
 #header {
   display: -moz-flex;
