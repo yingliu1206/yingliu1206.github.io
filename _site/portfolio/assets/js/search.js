@@ -4,12 +4,6 @@ document.getElementById('search-form').addEventListener('submit', function (e) {
     const files = ['index.html', 'work.html', 'education.html', 'ctr_rate.html', 'healthcare_fraud.html'];
     let results = [];
 
-    if (query.length === 0) {
-        // If query is empty, show all sections and clear results
-        displayOriginalSections();
-        toggleResultsVisibility(false); // Hide results section
-        return;
-    }
 
     // Use Promise.all to wait for all fetches to complete
     Promise.all(
@@ -86,13 +80,6 @@ function displayResults(results, query) {
             resultsContainer.appendChild(document.createElement('br')); // Add empty line between results
         });
     });
-}
-
-function displayOriginalSections() {
-    const resultsContainer = document.getElementById('results');
-    resultsContainer.innerHTML = ''; // Clear results section
-    // Optionally, show a message or reset the display of sections
-    resultsContainer.innerHTML = `<p>Original content restored. Please enter a search query to find results.</p>`;
 }
 
 function generateId() {
