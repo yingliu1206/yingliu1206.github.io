@@ -2303,3 +2303,28 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+/* career path */
+.career-path {
+  position: relative;
+  padding-left: 2em; /* Using em for padding */
+  border-left: 0.2em solid #ccc; /* Using em for border thickness */
+  margin-left: 2em; /* Using em for margin */
+}
+
+.step {
+  position: relative;
+  margin-bottom: 2em; /* Using em for spacing between steps */
+}
+
+.circle {
+  width: 1em; /* Using em for circle size */
+  height: 1em; /* Using em for circle size */
+  background-color: #0073b1; /* LinkedIn color */
+  border-radius: 50%;
+  position: absolute;
+  left: -2.6em; /* Adjusted to center the circle on the line using em */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
