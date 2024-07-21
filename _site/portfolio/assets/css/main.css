@@ -1218,9 +1218,7 @@ input[type="radio"] + label:before {
   position: relative; }
   .image img {
     border-radius: 0.375em;
-    display: block; 
-    /* width: 100%; */
-  }
+    display: block;  }
   .image.left, .image.right {
     max-width: 40%; }
     .image.left img, .image.right img {
@@ -1259,26 +1257,6 @@ a.image {
     -ms-transform: scale(1.075);
     transform: scale(1.075); }
 
-/* Media queries for responsiveness */
-@media (max-width: 1200px) {
-  .image.left, .image.right {
-    max-width: 50%; /* Adjust max width for smaller screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .image.left, .image.right {
-    max-width: 100%; /* Adjust max width for tablet sizes */
-    float: none; /* Remove floating for better stacking on small screens */
-    padding: 0 0 1em 0; /* Adjust padding */
-  }
-}
-
-@media (max-width: 480px) {
-  .image.fit, .image.main {
-    margin: 0 0 1em 0; /* Adjust margins for smaller screens */
-  }
-}
 
 /* List */
 ol {
