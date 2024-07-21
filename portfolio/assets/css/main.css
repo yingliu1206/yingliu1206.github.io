@@ -2309,7 +2309,7 @@ button,
   position: relative;
   padding-left: 2em; /* Using em for padding */
   border-left: 0.2em solid #ccc; /* Using em for border thickness */
-  margin-left: 2em; /* Using em for margin */
+  margin-left: 0em; /* Using em for margin */
 }
 
 .step {
