@@ -51,93 +51,22 @@
 					</div>
 
 				<!-- Sidebar -->
-                <div id="sidebar">
-                    <div class="inner">
+				<div id="sidebar-container"></div>
 
-                        <!-- Search -->
-                            <section id="search" class="alt">
-                                <form method="post" action="#">
-                                    <input type="text" name="query" id="query" placeholder="Search" />
-                                </form>
-                            </section>
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+				<script src="assets/js/search.js"></script>
 
-                        <!-- Menu -->
-                            <nav id="menu">
-                                <header class="major">
-                                    <h2>Menu</h2>
-                                </header>
-                                <ul>
-                                    <li><a href="index.html">About me</a></li>
-                                    <li><a href="education.html">Education</a></li>
-                                    <li><a href="work.html">Work Experience</a></li>
-                                    <li>
-                                        <span class="opener">Personal Projects</span>
-                                        <ul>
-                                            <li><a href="ctr_rate.html">Analyzing Factors for Advertisement Click Rate</a></li>
-                                            <li><a href="#">Ipsum Adipiscing</a></li>
-                                            <li><a href="#">Tempus Magna</a></li>
-                                            <li><a href="#">Feugiat Veroeros</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="elements.html">Elements</a></li>
-                                    <li>
-                                        <span class="opener">Another Submenu</span>
-                                        <ul>
-                                            <li><a href="#">Lorem Dolor</a></li>
-                                            <li><a href="#">Ipsum Adipiscing</a></li>
-                                            <li><a href="#">Tempus Magna</a></li>
-                                            <li><a href="#">Feugiat Veroeros</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-
-                        <!-- Section -->
-                            <section>
-                                <header class="major">
-                                    <h2>Certifications</h2>
-                                </header>
-                                <div class="mini-posts" style="text-align:center;">
-                                    <article>
-                                        <a href="#" class="image"><img src="images/tableau_cert.jpg" alt="tableau" style="display: inline-block; width: 200px;"/></a>
-                                        <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">Tableau Desktop Specialist</p>
-                                    </article>
-                                    <article>
-                                        <a href="#" class="image"><img src="images/tableau_cert.jpg" alt="tableau" style="display: inline-block; width: 200px;"/></a>
-                                        <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">Tableau Desktop Specialist</p>
-                                    </article>
-                                    <article>
-                                        <a href="#" class="image"><img src="images/tableau_cert.jpg" alt="tableau" style="display: inline-block; width: 200px;"/></a>
-                                        <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">Tableau Desktop Specialist</p>
-                                    </article>
-                                </div>
-                                <ul class="actions">
-                                    <li><a href="#" class="button">More</a></li>
-                                </ul>
-                            </section>
-
-                        <!-- Section -->
-                            <section>
-                                <header class="major">
-                                    <h2>Get in touch</h2>
-                                </header>
-                                <p>Thanks for visiting my website! If you'd like to get in touch with me, here are a few options:</p>
-                                <ul class="contact">
-                                    <li class="icon solid fa-envelope"><a href="#">ying.liu0331@gmail.com</a></li>
-                                    <li class="icon solid fa-phone" style = "margin-bottom: -10px;">(341) 345-7248</li>
-                                    <!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-                                        Nashville, TN 00000-0000</li> -->
-                                </ul>
-                            </section>
-
-                        <!-- Footer -->
-                            <footer id="footer">
-                                <p class="copyright">&copy; 2023 Ying Liu. All rights reserved.</p>
-                                <p class="copyright">This website is intended solely for use in job interviews and is not intended for public distribution. All information contained herein is the property of Ying Liu and may not be reproduced or used without permission.</p>
-                            </footer>
-
-                    </div>
-                </div>
+				<script>
+				  fetch('sidebar.html')
+					.then(response => response.text())
+					.then(data => {
+					  document.getElementById('sidebar-container').innerHTML = data;
+					});
+				</script>
 
         </div>
 

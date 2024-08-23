@@ -182,102 +182,22 @@ nltk.download('wordnet')</code></pre>
 					</div>
 
                 <!-- Sidebar -->
-                <div id="sidebar">
-                    <div class="inner">
+				<div id="sidebar-container"></div>
 
-                        <!-- Search section -->
-						<section id="search" class="alt">
-							<form id="search-form" method="get" action="#" role="search">
-								<input type="text" name="query" id="query" placeholder="Search" />
-							</form>
-						</section>
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+				<script src="assets/js/search.js"></script>
 
-						</section>
-						<section id="results">
-							<!-- Search results will be displayed here -->
-						</section>
-
-                        <!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li style = "font-size: 1em;"><a href="index.html">About me</a></li>
-										<li style = "font-size: 1em;"><a href="education.html">Education</a></li>
-										<li style = "font-size: 1em;"><a href="work.html">Work Experience</a></li>
-										<li style = "font-size: 1em;">
-											<span class="opener">Personal Projects</span>
-											<ul>
-												<li style = "font-size: 1em;"><a href="healthcare_fraud.html">Healthcare Provider Fraud Detection</a></li>
-												<li style = "font-size: 1em;"><a href="ctr_rate.html">Analyzing Factors for Advertisement Click Rate</a></li>
-												<li style = "font-size: 1em;"><a href="https://github.com/yingliu1206/sagemaker-end-to-end-workshop">Amazon SageMaker End to End Workshop: Customer Churn Prediction</a></li>
-												<li style = "font-size: 1em;"><a href="https://github.com/yingliu1206/Obesity-Level-Classification-Application">Obesity Classification and Data Analysis via Machine Learning</a></li>
-												
-												<!-- <li><a href="app_fish.html">Fish Weight Prediction App</a></li> -->
-												<!-- <li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li> -->
-											</ul>
-										</li>
-										<!-- <li><a href="elements.html">Elements</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li> -->
-									</ul>
-								</nav>
-
-                        <!-- Section -->
-                        <section>
-                            <header class="major">
-                                <h2>Certifications</h2>
-                            </header>
-                            <div class="mini-posts" style="text-align:center;">
-                                <article>
-                                    <a href="#" class="image"><img src="images/AWS-Certified-ML.jpg" alt="AWS Certified ML" style="display: inline-block; width: 12em;"/></a>
-                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">AWS Certified Machine Learning - Specialty</p>								
-                                    </article>
-                                <article>
-                                    <a href="#" class="image"><img src="images/tableau_cert.jpg" alt="Tableau" style="display: inline-block; width: 12em;"/></a>
-                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">Tableau Desktop Specialist</p>
-                                </article>
-                                <article>
-                                    <a href="#" class="image"><img src="images/aws-architeching.png" alt="AWS Knowledge: Architecting" style="display: inline-block; width: 12em;"/></a>
-                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">AWS Knowledge: Architecting</p>
-                                </article>
-                            </div>
-                            <!-- <ul class="actions">
-                                <li><a href="#" class="button">More</a></li>
-                            </ul> -->
-                        </section>
-
-                        <!-- Section -->
-                            <section>
-                                <header class="major">
-                                    <h2>Get in touch</h2>
-                                </header>
-                                <p style="font-size: 1em;">Thanks for visiting my website! If you'd like to get in touch, please reach out via email:</p>
-                                <ul class="contact">
-                                    <li style="font-size: 1em;" class="icon solid fa-envelope"><a href="#">ying.liu0331@gmail.com</a></li>
-                                    <!-- <li class="icon solid fa-phone" style = "margin-bottom: -1em;">(341) 345-7248</li> -->
-                                    <!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-                                        Nashville, TN 00000-0000</li> -->
-                                </ul>
-                            </section>
-
-                        <!-- Footer -->
-                            <footer id="footer">
-                                <p class="copyright">&copy; 2023 Ying Liu. All rights reserved.</p>
-                                <p class="copyright">This website is intended solely for use in job interviews and is not intended for public distribution. All information contained herein is the property of Ying Liu and may not be reproduced or used without permission.</p>
-                            </footer>
-
-                    </div>
-                </div>
+				<script>
+				  fetch('sidebar.html')
+					.then(response => response.text())
+					.then(data => {
+					  document.getElementById('sidebar-container').innerHTML = data;
+					});
+				</script>
 
         </div>
 
