@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Chatbot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			h1 {
+			  font-size: 1.8em;
+			}
+            h3 {
+            margin-top: 20px; /* Add margin between h3 headings */
+            }
+            p{
+              font-size: 1.1em;
+            }
+            li {
+                margin-top: 0.2em;
+                font-size: 1.1em;
+            }
+            img {
+            max-width: 100%;
+            height: auto;
+        }
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<!-- <a href="education.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+									<ul class="icons">
+										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> -->
+										<li><a href="https://www.linkedin.com/in/ying-liu-4b45a8195/" class="icon brands fa-linkedin" style="font-size:1.5em"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/yingliu1206" class="icon brands fa-github" style="font-size:1.5em"><span class="label">GitHub</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1 style="display: flex; justify-content: space-between; align-items: center;">Chatbot
+                                            <a style="font-size: 0.35em;" href="https://github.com/yingliu1206/Chatbot.git" class="button big">Repo Link</a>
+                                          </h1>                                          
+                                       
+									</header>
+
+									<hr class="major" id = 'chatbot'/>
+
+									<div class="major">
+										<article>										
+											<div class="content">
+                                                <h2>Introduction</h2>
+                                                <hr>
+                                                <p>This project is a simple AI-powered chatbot built using Python, Keras, and Tkinter. The chatbot is designed to respond to user inputs based on predefined intents and patterns. It demonstrates natural language processing (NLP) techniques, machine learning model training, and a graphical user interface (GUI) for user interaction.</p>
+                                                <h2>Table of Contents</h2>  
+                                                <ul>
+                                                    <li><a href="#project-overview">Project Overview</a></li>
+                                                    <li><a href="#features">Features</a></li>
+                                                    <li><a href="#installation">Installation</a></li>
+                                                    <li><a href="#usage">Usage</a></li>
+                                                    <li><a href="#project-structure">Project Structure</a></li>
+                                                    <li><a href="#chatbot-interface">Chatbot Interface</a></li>
+                                                </ul>
+
+                                                <h2 id="project-overview">Project Overview</h2>
+                                                <hr>
+                                                <p>The goal of this project is to predict potentially fraudulent healthcare providers based on their profile features. By analyzing various data points, including the number of claims filed, operating areas, specialties, common diagnosis codes, procedure codes, total reimbursement amounts, and other relevant information, we aim to develop a robust predictive model. Additionally, we seek to identify key variables that are instrumental in detecting potentially fraudulent providers.</p>
+                                                
+                                                <h2 id="features">Features</h2>
+                                                <hr>
+                                                <ul>
+                                                    <li><strong>Natural Language Processing:</strong> Tokenization, lemmatization, and bag-of-words techniques are used to preprocess user inputs.</li>
+                                                    <li><strong>Machine Learning:</strong> The chatbot uses a neural network model built with Keras to classify user inputs.</li>
+                                                    <li><strong>Graphical User Interface:</strong> A Tkinter-based GUI allows for easy interaction with the chatbot.</li>
+                                                    <li><strong>Customizable Intents:</strong> Easily modify the chatbot's behavior by updating the <code>intents.json</code> file.</li>
+                                                </ul>
+                                                
+                                                <h2 id="installation">Installation</h2>
+                                                <hr>
+                                                <h3>Prerequisites</h3>
+                                                <ul>
+                                                    <li>Python 3.x</li>
+                                                    <li>Required Python packages (see <code>requirements.txt</code>)</li>
+                                                </ul>
+
+                                                <h3>Steps</h3>
+                                                <ol>
+                                                    <li><strong>Clone the Repository</strong>
+                                                        <pre><code>git clone https://github.com/yingliu1206/Chatbot.git
+cd Chatbot</code></pre>
+                                                    </li>
+
+                                                    <li><strong>Install Dependencies</strong>
+                                                        <pre><code>pip install -r requirements.txt</code></pre>
+
+                                                        <p style = "font-size: 1em"><strong>Note for Apple ARM Users:</strong> If you're using an Apple ARM (M1 or M2) machine, install TensorFlow using Miniforge to avoid compatibility issues. Set up a Miniforge environment and install TensorFlow as follows:</p>
+                                                        <pre><code># Download Miniforge installer
+curl -LO https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh
+
+# Install Miniforge
+bash Miniforge3-MacOSX-arm64.sh
+
+# Check and update Shell configuration
+nano ~/.zshrc
+# Add the following line to the file:
+# export PATH="/Users/yourusername/miniforge3/bin:$PATH"
+# Save and exit by pressing Ctrl + X, then Y to confirm changes, and Enter to save.
+
+# Apply the changes
+source ~/.zshrc
+
+# Verify Python path
+which python # It should point to something like /Users/yourusername/miniforge3/bin/python.
+
+# Check architecture
+python -c "import platform; print(platform.platform())"
+
+# Create and activate the environment
+python -m venv chatbot_env
+source chatbot_env/bin/activate
+
+# Install TensorFlow
+pip install tensorflow-macos</code></pre>
+                                                    </li>
+
+                                                    <li><strong>Download NLTK Data</strong>
+                                                        <pre><code>import nltk
+nltk.download('punkt')
+nltk.download('wordnet')</code></pre>
+                                                    </li>
+
+                                                    <li><strong>Train the Model:</strong> Run the training script to train the chatbot model
+                                                        <pre><code>python train_chatbot.py</code></pre>
+                                                    </li>
+
+                                                    <li><strong>Run the Chatbot:</strong> Start the chatbot with the GUI:
+                                                        <pre><code>python chatbot_gui.py</code></pre>
+                                                    </li>
+                                                </ol>
+
+                                                <h2 id="usage">Usage</h2>
+                                                <ol>
+                                                    <li>Launch the chatbot GUI by running <code>chatbot_gui.py</code>.</li>
+                                                    <li>Type your message into the text box and press "Send" or hit Enter.</li>
+                                                    <li>The chatbot will respond based on the trained model.</li>
+                                                </ol>
+
+                                                <h2 id="project-structure">Project Structure</h2>
+                                                <hr>
+                                                <pre><code>chatbot-project/
+│
+├── intents.json          # Contains the intents, patterns, and responses
+├── train_chatbot.py      # Script to preprocess data and train the model
+├── chatbot_gui.py        # Script to launch the Tkinter GUI for the chatbot
+├── chatbot_model.h5      # Saved Keras model after training
+├── words.pkl             # Pickle file containing the preprocessed words
+├── classes.pkl           # Pickle file containing the list of classes (intents)
+├── README.md             # Project documentation
+└── requirements.txt      # Python dependencies</code></pre>
+                                                
+                                                <h2 id="chatbot-interface">Chatbot Interface</h2>
+                                                <hr>
+                                                <img src="images/chatbot_interface.png" alt="Chatbot Interface Screenshot">
+
+											</div>
+										</article>
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+                <!-- Sidebar -->
+                <div id="sidebar">
+                    <div class="inner">
+
+                        <!-- Search section -->
+						<section id="search" class="alt">
+							<form id="search-form" method="get" action="#" role="search">
+								<input type="text" name="query" id="query" placeholder="Search" />
+							</form>
+						</section>
+
+						</section>
+						<section id="results">
+							<!-- Search results will be displayed here -->
+						</section>
+
+                        <!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li style = "font-size: 1em;"><a href="index.html">About me</a></li>
+										<li style = "font-size: 1em;"><a href="education.html">Education</a></li>
+										<li style = "font-size: 1em;"><a href="work.html">Work Experience</a></li>
+										<li style = "font-size: 1em;">
+											<span class="opener">Personal Projects</span>
+											<ul>
+												<li style = "font-size: 1em;"><a href="healthcare_fraud.html">Healthcare Provider Fraud Detection</a></li>
+												<li style = "font-size: 1em;"><a href="ctr_rate.html">Analyzing Factors for Advertisement Click Rate</a></li>
+												<li style = "font-size: 1em;"><a href="https://github.com/yingliu1206/sagemaker-end-to-end-workshop">Amazon SageMaker End to End Workshop: Customer Churn Prediction</a></li>
+												<li style = "font-size: 1em;"><a href="https://github.com/yingliu1206/Obesity-Level-Classification-Application">Obesity Classification and Data Analysis via Machine Learning</a></li>
+												
+												<!-- <li><a href="app_fish.html">Fish Weight Prediction App</a></li> -->
+												<!-- <li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li> -->
+											</ul>
+										</li>
+										<!-- <li><a href="elements.html">Elements</a></li>
+										<li>
+											<span class="opener">Another Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li> -->
+									</ul>
+								</nav>
+
+                        <!-- Section -->
+                        <section>
+                            <header class="major">
+                                <h2>Certifications</h2>
+                            </header>
+                            <div class="mini-posts" style="text-align:center;">
+                                <article>
+                                    <a href="#" class="image"><img src="images/AWS-Certified-ML.jpg" alt="AWS Certified ML" style="display: inline-block; width: 12em;"/></a>
+                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">AWS Certified Machine Learning - Specialty</p>								
+                                    </article>
+                                <article>
+                                    <a href="#" class="image"><img src="images/tableau_cert.jpg" alt="Tableau" style="display: inline-block; width: 12em;"/></a>
+                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">Tableau Desktop Specialist</p>
+                                </article>
+                                <article>
+                                    <a href="#" class="image"><img src="images/aws-architeching.png" alt="AWS Knowledge: Architecting" style="display: inline-block; width: 12em;"/></a>
+                                    <p style = "font-size: medium; color: #3d4449; font-family: Arial, Helvetica, sans-serif; font-weight: 700">AWS Knowledge: Architecting</p>
+                                </article>
+                            </div>
+                            <!-- <ul class="actions">
+                                <li><a href="#" class="button">More</a></li>
+                            </ul> -->
+                        </section>
+
+                        <!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Get in touch</h2>
+                                </header>
+                                <p style="font-size: 1em;">Thanks for visiting my website! If you'd like to get in touch, please reach out via email:</p>
+                                <ul class="contact">
+                                    <li style="font-size: 1em;" class="icon solid fa-envelope"><a href="#">ying.liu0331@gmail.com</a></li>
+                                    <!-- <li class="icon solid fa-phone" style = "margin-bottom: -1em;">(341) 345-7248</li> -->
+                                    <!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+                                        Nashville, TN 00000-0000</li> -->
+                                </ul>
+                            </section>
+
+                        <!-- Footer -->
+                            <footer id="footer">
+                                <p class="copyright">&copy; 2023 Ying Liu. All rights reserved.</p>
+                                <p class="copyright">This website is intended solely for use in job interviews and is not intended for public distribution. All information contained herein is the property of Ying Liu and may not be reproduced or used without permission.</p>
+                            </footer>
+
+                    </div>
+                </div>
+
+        </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/search.js"></script>
+
+
+	</body>
+</html>
