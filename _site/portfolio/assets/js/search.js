@@ -52,21 +52,27 @@ function extractMatchingSections(body, query, file) {
 
     sections.forEach(section => {
         if (section.textContent.toLowerCase().includes(query)) {
-            // Create a link to the section
-            const id = section.previousElementSibling.getAttribute('id') || generateId();
-            section.previousElementSibling.setAttribute('id', id);
-            const titleElement = section.querySelector('h2, h3, h4');
-            const sectionTitle = titleElement ? titleElement.textContent : 'Section';
-            const paragraphs = Array.from(section.querySelectorAll('p')).slice(0, 2);
+            // Check if previousElementSibling exists and has an ID
+            const previousElement = section.previousElementSibling;
+            if (previousElement && previousElement.getAttribute) {
+                const id = previousElement.getAttribute('id') || generateId();
+                previousElement.setAttribute('id', id);
+                const titleElement = section.querySelector('h2, h3, h4');
+                const sectionTitle = titleElement ? titleElement.textContent : 'Section';
+                const paragraphs = Array.from(section.querySelectorAll('p')).slice(0, 2);
 
-            const content = paragraphs.map(p => p.outerHTML).join(' ');
+                const content = paragraphs.map(p => p.outerHTML).join(' ');
 
-            matchedSections.push({ id: id, file: file, title: sectionTitle, content: content });
+                matchedSections.push({ id: id, file: file, title: sectionTitle, content: content });
+            } else {
+                console.error('No previous element or no valid ID for section in file:', file);
+            }
         }
     });
 
     return matchedSections;
 }
+
 
 function displayResults(results, query) {
     const resultsContainer = document.getElementById('results');
