@@ -310,26 +310,42 @@
 
 						</div>
 					</div>		
-
+			
 				<!-- Sidebar -->
 				<div id="sidebar-container"></div>
 				
-				<script src="assets/js/jquery.min.js"></script>
-				<script src="assets/js/browser.min.js"></script>
-				<script src="assets/js/breakpoints.min.js"></script>
-				<script src="assets/js/util.js"></script>
-				<script src="assets/js/main.js"></script>
-				<script src="assets/js/search.js"></script>
-
 				<script>
-				  fetch('sidebar.html')
-					.then(response => response.text())
-					.then(data => {
-					  document.getElementById('sidebar-container').innerHTML = data;
+					function loadScript(src, onload) {
+						const script = document.createElement('script');
+						script.src = src;
+						script.onload = onload;
+						document.body.appendChild(script);
+					}
+			
+					document.addEventListener("DOMContentLoaded", function(event) { 
+						fetch('sidebar.html')
+							.then(response => response.text())
+							.then(data => {
+								document.getElementById('sidebar-container').innerHTML = data;
+			
+								// Load scripts in the required order
+								loadScript('assets/js/jquery.min.js', function() {
+									loadScript('assets/js/browser.min.js', function() {
+										loadScript('assets/js/breakpoints.min.js', function() {
+											loadScript('assets/js/util.js', function() {
+												loadScript('assets/js/main.js', function() {
+													loadScript('assets/js/search.js', function() {
+														console.log('All scripts loaded.');
+													});
+												});
+											});
+										});
+									});
+								});
+							})
+							.catch(error => console.error('Error loading sidebar:', error));
 					});
-				</script>
-				
-			</div>
+				</script>	
 
 			<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -338,7 +354,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/search.js"></script>
-
-
+		</div>	
 	</body>
 </html>
