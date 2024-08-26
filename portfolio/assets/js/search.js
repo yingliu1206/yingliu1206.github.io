@@ -1,9 +1,18 @@
 document.getElementById('search-form').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent form submission
+
     const query = document.getElementById('query').value.toLowerCase().trim();
+
+    // Check if the query is empty
+    if (query === "") {
+        // Clear the results and hide the results section
+        displayResults([], query);
+        toggleResultsVisibility(false);
+        return;
+    }
+
     const files = ['index.html', 'work.html', 'education.html', 'ctr_rate.html', 'healthcare_fraud.html', 'chatbot.html'];
     let results = [];
-
 
     // Use Promise.all to wait for all fetches to complete
     Promise.all(
