@@ -209,32 +209,60 @@
 
 				<!-- Sidebar -->
 				<div id="sidebar-container"></div>
-
-				<script src="assets/js/jquery.min.js"></script>
-				<script src="assets/js/browser.min.js"></script>
-				<script src="assets/js/breakpoints.min.js"></script>
-				<script src="assets/js/util.js"></script>
-				<script src="assets/js/main.js"></script>
-				<script src="assets/js/search.js"></script>
-
+				
+				<!-- Sidebar -->
+				<div id="sidebar-container"></div>
+				
 				<script>
-				  fetch('sidebar.html')
-					.then(response => response.text())
-					.then(data => {
-					  document.getElementById('sidebar-container').innerHTML = data;
+					document.addEventListener("DOMContentLoaded", function() {
+					  fetch('sidebar.html')
+						.then(response => response.text())
+						.then(data => {
+						  document.getElementById('sidebar-container').innerHTML = data;
+			  
+						  // Load scripts after sidebar content is added
+						  const scripts = [
+							'assets/js/jquery.min.js',
+							'assets/js/browser.min.js',
+							'assets/js/breakpoints.min.js',
+							'assets/js/util.js',
+							'assets/js/main.js',
+							'assets/js/search.js'
+						  ];
+			  
+						  scripts.reduce((promise, script) => {
+							return promise.then(() => {
+							  return new Promise((resolve, reject) => {
+								const s = document.createElement('script');
+								s.src = script;
+								s.onload = resolve;
+								s.onerror = reject;
+								document.body.appendChild(s);
+							  });
+							});
+						  }, Promise.resolve())
+						  .then(() => {
+							console.log('All scripts loaded successfully.');
+							// Ensure initialization of search after all scripts are loaded
+							if (typeof window.initializeSearch === 'function') {
+							  window.initializeSearch();
+							}
+						  })
+						  .catch(error => {
+							console.error('Error loading script:', error);
+						  });
+						})
+						.catch(error => console.error('Error loading sidebar:', error));
 					});
-				</script>
+				</script>	
 
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+			<!-- Scripts -->
+			<!-- <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="assets/js/search.js"></script>
-			
-
+			<script src="assets/js/search.js"></script> -->
+		</div>	
 	</body>
 </html>
