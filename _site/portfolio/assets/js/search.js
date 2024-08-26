@@ -1,7 +1,7 @@
 document.getElementById('search-form').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent form submission
     const query = document.getElementById('query').value.toLowerCase().trim();
-    const files = ['index.html', 'work.html', 'education.html', 'ctr_rate.html', 'healthcare_fraud.html'];
+    const files = ['index.html', 'work.html', 'education.html', 'ctr_rate.html', 'healthcare_fraud.html', 'chatbot.html'];
     let results = [];
 
 
