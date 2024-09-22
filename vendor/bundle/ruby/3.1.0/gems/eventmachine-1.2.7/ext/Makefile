@@ -13,12 +13,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/yingliu/.rbenv/versions/3.1.0/include/ruby-3.1.0
+topdir = /Users/yingliu/.rbenv/versions/3.1.2/include/ruby-3.1.0
 hdrdir = $(topdir)
-arch_hdrdir = /Users/yingliu/.rbenv/versions/3.1.0/include/ruby-3.1.0/arm64-darwin21
+arch_hdrdir = /Users/yingliu/.rbenv/versions/3.1.2/include/ruby-3.1.0/arm64-darwin23
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/yingliu/.rbenv/versions/3.1.0
+prefix = $(DESTDIR)/Users/yingliu/.rbenv/versions/3.1.2
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -32,8 +32,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20230311-27871-5sm8gc
-sitelibdir = $(DESTDIR)./.gem.20230311-27871-5sm8gc
+sitearchdir = $(DESTDIR)./.gem.20240921-79400-unmcze
+sitelibdir = $(DESTDIR)./.gem.20240921-79400-unmcze
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -86,12 +86,12 @@ warnflags = -Wall -Wextra -Wdeprecated-declarations -Wdivision-by-zero -Wimplici
 cppflags = 
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS) $(cflags)  -fno-common -pipe  $(ARCH_FLAG)
-INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) -I/Users/yingliu/.rbenv/versions/3.1.0/openssl/include
+INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) -I/opt/homebrew/Cellar/openssl@3/3.3.2/include
 DEFS     = 
-CPPFLAGS = -DHAVE_OPENSSL_SSL_H -DHAVE_OPENSSL_ERR_H -DWITH_SSL -DBUILD_FOR_RUBY -DHAVE_RB_THREAD_CALL_WITHOUT_GVL -DHAVE_RB_THREAD_FD_SELECT -DHAVE_TYPE_RB_FDSET_T -DHAVE_RB_WAIT_FOR_SINGLE_FD -DHAVE_RB_TIME_NEW -DHAVE_WRITEV -DOS_UNIX -DHAVE_SYS_EVENT_H -DHAVE_SYS_QUEUE_H -DHAVE_KQUEUE -DOS_DARWIN -DHAVE_CLOCK_GETTIME -DHAVE_CONST_CLOCK_MONOTONIC_RAW -DHAVE_CONST_CLOCK_MONOTONIC -DHAVE_MAKE_PAIR -I/Users/yingliu/.rbenv/versions/3.1.0/openssl/include -I/Users/yingliu/.rbenv/versions/3.1.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
+CPPFLAGS = -DHAVE_OPENSSL_SSL_H -DHAVE_OPENSSL_ERR_H -DWITH_SSL -DBUILD_FOR_RUBY -DHAVE_RB_THREAD_CALL_WITHOUT_GVL -DHAVE_RB_THREAD_FD_SELECT -DHAVE_TYPE_RB_FDSET_T -DHAVE_RB_WAIT_FOR_SINGLE_FD -DHAVE_RB_TIME_NEW -DHAVE_WRITEV -DOS_UNIX -DHAVE_SYS_EVENT_H -DHAVE_SYS_QUEUE_H -DHAVE_KQUEUE -DOS_DARWIN -DHAVE_CLOCK_GETTIME -DHAVE_CONST_CLOCK_MONOTONIC_RAW -DHAVE_CONST_CLOCK_MONOTONIC -DHAVE_MAKE_PAIR -I/opt/homebrew/opt/openssl@3/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) -fdeclspec  $(ARCH_FLAG)
-ldflags  = -L. -L/Users/yingliu/.rbenv/versions/3.1.0/lib  -fstack-protector-strong -L/Users/yingliu/.rbenv/versions/3.1.0/openssl/lib
-dldflags = -L/Users/yingliu/.rbenv/versions/3.1.0/lib  -Wl,-multiply_defined,suppress 
+ldflags  = -L. -fstack-protector-strong -L/opt/homebrew/Cellar/openssl@3/3.3.2/lib
+dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CXX) -dynamic -bundle
@@ -106,7 +106,7 @@ RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
 
-arch = arm64-darwin21
+arch = arm64-darwin23
 sitearch = $(arch)
 ruby_version = 3.1.0
 ruby = $(bindir)/$(RUBY_BASE_NAME)
@@ -126,8 +126,8 @@ TOUCH = exit >
 #### End of system configuration section. ####
 
 preload = 
-libpath = . $(libdir) /Users/yingliu/.rbenv/versions/3.1.0/openssl/lib
-LIBPATH =  -L. -L$(libdir) -L/Users/yingliu/.rbenv/versions/3.1.0/openssl/lib
+libpath = . $(libdir) /opt/homebrew/opt/openssl@3/lib
+LIBPATH =  -L. -L$(libdir) -L/opt/homebrew/opt/openssl@3/lib
 DEFFILE = 
 
 CLEANFILES = mkmf.log

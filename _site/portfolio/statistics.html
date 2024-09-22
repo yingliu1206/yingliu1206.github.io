@@ -1,0 +1,533 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>statistics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                color: #333;
+                background-color: #f4f4f4;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h1, h2 {
+                color: #333;
+            }
+            ul {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            .section h2 {
+                border-bottom: 2px solid #333;
+                padding-bottom: 5px;
+            }
+            .compact-list ul {
+                margin-bottom: 0; /* Reduce or remove the space below the inner list */
+                padding-bottom: 0; /* Remove any padding from the bottom */
+            }
+            .highlight {
+            color: red; /* Highlight color */
+            font-weight: bold;
+            }
+            .image-container {
+            text-align: left;
+            margin: 5px 0;
+            }
+            .image-container img {
+                max-width: 50%;
+                height: auto;
+            }
+        </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<!-- <a href="education.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+									<ul class="icons">
+										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> -->
+										<li><a href="https://www.linkedin.com/in/ying-liu-4b45a8195/" class="icon brands fa-linkedin" style="font-size:1.5em"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/yingliu1206" class="icon brands fa-github" style="font-size:1.5em"><span class="label">GitHub</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+                                    <div class="container">
+                                        <h1>Statistics</h1>                                      
+                                        
+                                        <div class="section">
+                                            <h2>Statistics Measures</h2>
+                                            <ul>
+                                                <li><strong>Mean:</strong> The mean is a measure of central tendency, calculated as the sum of all values divided by the number of values. It can be significantly influenced by extremely high or low values in the dataset.</li>
+                                                <li><strong>Median:</strong> The median represents the middle value when the data is sorted in ascending order. It is less affected by outliers compared to the mean.</li>
+                                                <li><strong>Mode:</strong> The mode is the value that appears most frequently in the dataset.</li>
+                                                <li><strong>Outliers:</strong> Outliers are values that differ significantly from other observations. In a normal distribution, outliers are often defined as values that fall outside the range of <span class="highlight">Q3 + 1.5 * IQR</span> or <span class="highlight">Q1 - 1.5 * IQR</span>.</li>
+                                                <li><strong>Interquartile Range (IQR):</strong> The IQR is the range between the first quartile (Q1) and the third quartile (Q3), encompassing the middle 50% of the data. It helps in identifying the spread and detecting outliers.</li>
+                                                <!-- Visual Representation -->
+                                                <div class="image-container">
+                                                    <img src="images/IQR.png" alt="IQR">
+                                                </div>
+                                                
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="section">
+                                            <h2>Visualizations</h2>
+                                            <ul>
+                                                <li><strong>Categorical Data:</strong> bar charts and two-way tables.</li>
+                                                <li><strong>Histograms:</strong> A histogram displays numerical data by grouping it into bins of equal width. Each bin's height corresponds to the number of data points within that bin. Bins are also referred to as intervals, classes, or buckets.</li>
+                                                <li><strong>Stem and Leaf Plots:</strong> This plot displays numerical data by splitting each data point into a leaf (usually the last digit) and a stem (the leading digit or digits).</li>
+                                                <li><strong>Box Plot:</strong> A box plot shows the minimum, maximum, median, and interquartile range (IQR) of the data.</li>
+                                                <li><strong>Line Graph:</strong> A line graph is useful for showing trends over time. It's important to be cautious about the scale used in the graph.</li>
+                                                <li><strong>Scatterplot:</strong> Shows the relationship between two numerical variables. There is no standard rule for identifying outliers, but scatterplots are useful for visualizing correlations.</li>
+                                                <li><strong>Cumulative Relative Frequency Graph:</strong> The Y-axis represents percentiles, showing the cumulative distribution of the data.</li>
+                                                <div class="image-container">
+                                                    <img src="images/cumulative relative frequency plot.png" alt="Cumulative Relative Frequency Graph">
+                                                </div>
+                                            </ul>
+                                        </div>
+
+                                        <div class="section">
+                                            <h2>Sampling and Distributions</h2>
+                                            <ul class="compact-list">
+                                                <li>
+                                                    <strong>Sampling:</strong> Selecting a subset from a population to estimate characteristics. Sampling methods can be:
+                                                    <ul >
+                                                        <li><strong>Probability-based:</strong> Each member of the population has a known probability of being selected.</li>
+                                                        <li><strong>Non-probability based:</strong> Selection of individuals is based on convenience, judgment, or quota.</li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>Distribution:</strong> Refers to the center and spread (variability) of data. When analyzing distributions, consider:
+                                                    <ul>
+                                                        <li><strong>Center:</strong> Typically described by the <strong>mean</strong> or <strong>median</strong>.</li>
+                                                        <li><strong>Spread/Variability:</strong> Described by measures like the <strong>standard deviation (SD)</strong> or the <strong>interquartile range (IQR)</strong>.</li>
+                                                        <li>
+                                                            <strong>Shift:</strong> When adding a constant to each data point:
+                                                            <ul>
+                                                                <li><strong>Mean</strong> and <strong>median</strong> will change by the same constant.</li>
+                                                                <li><strong>Standard deviation (SD)</strong> and <strong>interquartile range (IQR)</strong> will remain unchanged.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Scale:</strong> When multiplying each data point by a constant:
+                                                            <ul>
+                                                                <li><strong>Mean</strong>, <strong>median</strong>, <strong>SD</strong>, and <strong>IQR</strong> will all change by the same multiplication factor.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <div class="image-container">
+                                                            <img src="images/density curve.png" alt="density curve">
+                                                        </div>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>Central Limit Theorem:</strong> 
+                                                    The central limit theorem states that if a random sample is drawn from any population, regardless of its distribution, <strong>the distribution of the sample means</strong> will be approximately normally distributed as the sample size increases.
+                                                    <ul>
+                                                        <li>This allows for inferences about a population based on a sample, even without knowing the population's distribution.</li>
+                                                        <li>By using the central limit theorem, we can assume that the sample means will be normally distributed and use this information to perform hypothesis tests or construct confidence intervals.</li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>Combining Random Variables:</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Effect on Mean and Variance:</strong>
+                                                            When combining random variables, those that follow a normal distribution, the resulting distribution also follows a normal distribution. Here's how the mean, standard deviation, and variance are affected:
+                                                            <div class="image-container">
+                                                                <img src="images/combining random variables.png" alt="combining random variables">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+
+                                                <li>
+                                                    <strong>Normal Distribution:</strong> A type of probability distribution commonly observed in real-world phenomena such as heights, weights, or IQ scores.
+                                                    <ul>
+                                                        <li>Also known as a <strong>Gaussian distribution</strong> or a <strong>bell curve</strong> due to its shape.</li>
+                                                        <li>The bell curve is defined by the <strong>mean</strong> and the <strong>standard deviation</strong>.</li>
+                                                        <li>The <strong>68-95-99.7 rule</strong> explains the proportion of data that falls within specific standard deviations:
+                                                            <ul>
+                                                                <li>68% of the data are within one standard deviation of the mean.</li>
+                                                                <li>95% of the data are within two standard deviations of the mean.</li>
+                                                                <li>99.7% of the data are within three standard deviations of the mean.</li>
+                                                            </ul>
+                                                            <div class="image-container">
+                                                                <img src="images/normal distribution.png" alt="normal distribution">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>Binomial Distribution:</strong>
+                                                    <ul>
+                                                        <li>
+                                                            A binomial distribution describes the number of successes in a fixed number of independent trials of a binary (yes/no) experiment, each with the same probability of success.
+                                                        </li>
+                                                        <li>
+                                                            <strong>Binomial Variable:</strong>
+                                                            <div class="image-container">
+                                                                <img src="images/binomial vairables.png" alt="Binomial Variables">
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Probability Mass Function:</strong> The probability of getting exactly \( k \) successes in \( n \) trials is given by:
+                                                            <br>
+                                                            \( P(X = k) = C(n, k) \cdot p^k \cdot (1 - p)^{(n - k)} \)
+                                                            <br>
+                                                            where:
+                                                            <ul>
+                                                                <li>\( C(n, k) \) is the binomial coefficient (combinations).</li>
+                                                                <li>\( p \) is the probability of success on a single trial.</li>
+                                                                <li>\( n \) is the number of trials.</li>
+                                                                <li>\( k \) is the number of successes.</li>
+                                                                <li>Example:</li>
+                                                                <div class="image-container">
+                                                                    <img src="images/binomial distribution example.png" alt="Binomial Distribution Example">
+                                                                </div>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Mean and Variance:</strong>
+                                                            <ul>
+                                                                <li><strong>Mean:</strong> \( \mu = n \cdot p \)</li>
+                                                                <li><strong>Variance:</strong> \( \sigma^2 = n \cdot p \cdot (1 - p) \)</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong>Bernoulli Distribution:</strong>
+                                                    <ul>
+                                                        <li>A Bernoulli distribution is a special case of the binomial distribution where the number of trials \( n \) is 1.</li>
+                                                        <li>
+                                                            <strong>Probability Mass Function:</strong> The probability of success in a single Bernoulli trial is given by:
+                                                            <br>
+                                                            \( P(X = 1) = p \)
+                                                            <br>
+                                                            \( P(X = 0) = 1 - p \)
+                                                            <br>
+                                                            where:
+                                                            <ul>
+                                                                <li>\( p \) is the probability of success.</li>
+                                                                <li>\( 1 - p \) is the probability of failure.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Mean and Variance:</strong>
+                                                            <ul>
+                                                                <li><strong>Mean:</strong> \( \mu = p \)</li>
+                                                                <li><strong>Variance:</strong> \( \sigma^2 = p \cdot (1 - p) \)</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <strong><span class="highlight">Using Population to Estimate Sample Characteristics:</span></strong>
+                                                    <ul>
+                                                        <ol>
+                                                            <li>
+                                                                <strong>Sample Proportion Distribution:</strong>
+                                                                <ul>
+                                                                    <li>The distribution of sample proportions is approximately normal if:
+                                                                        <ul>
+                                                                            <li>The expected number of successes and failures is at least 10 (i.e., &#1109;p &#8805; 10 and &#1109;(1 - p) &#8805; 10).</li>
+                                                                            <li>The sample size is ≤ 10% of the population, or sampling is done with replacement to ensure independence.</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>Sample Mean = \( p \) (the population proportion)</li>
+                                                                    <li>Sample Variance = \( \frac{p \cdot (1 - p)}{n} \)</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <strong>Sample Mean Distribution:</strong>
+                                                                <ul>
+                                                                    <li>The distribution of sample means is approximately normal if:
+                                                                        <ul>
+                                                                            <li>The sample size is sufficiently large (≥ 30). For smaller sample sizes (< 30), the distribution approximates the population distribution if the population distribution is normal.</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>Sample Mean = &#956; (the population mean) .</li>
+                                                                    <li>Sample Variance = &#966;&#8322;/n (where &#966;&#8322; is the population variance).</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <strong>Example:</strong>
+                                                                <div class="image-container">
+                                                                    <img src="images/population_sample_example.png" alt="Population to Sample Example">
+                                                                </div>
+                                                            </li>
+                                                        </ol>
+                                                    </ul>
+                                                </li>
+                                                
+                                        </div>
+                                    
+                                        <div class="section">
+                                            <h2>Inference and Testing</h2>
+                                            <ul class="compact-list">
+                                                <li>
+                                                    <strong>Confidence Intervals:</strong> A range within which a population parameter is likely to fall.
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Confidence Interval for Means (n ≥ 30): <span class="highlight">\( \bar{x} \pm z \cdot \frac{\sigma}{\sqrt{n}} \)</span></strong>
+                                                            where:
+                                                            <ul>
+                                                                <li>\(\bar{x}\) is the sample mean.</li>
+                                                                <li>\(z\) is the z-score corresponding to the desired confidence level.</li>
+                                                                <li>\(\sigma\) is the population standard deviation (or sample standard deviation if \(\sigma\) is unknown).</li>
+                                                                <li>\(n\) is the sample size.</li>
+                                                            </ul>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Conditions for Inference on a Mean:</strong>
+                                                                    <ul>
+                                                                        <li><strong>Random:</strong> A random sample or randomized experiment should be used to obtain the data.</li>
+                                                                        <li><strong>Normal:</strong> The sampling distribution of the sample mean needs to be approximately normal. This is true if:
+                                                                            <ul>
+                                                                                <li>The parent population is normal,</li>
+                                                                                <li>or the sample size is reasonably large (n ≥ 30),</li>
+                                                                                <li>or the sample distribution is roughly symmetric with no outliers.</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li><strong>Independent:</strong>If sampling without replacement, the sample size should be less than 10% of the population.</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Confidence Interval for Means (n < 30): <span class="highlight">\( \bar{x} \pm t \cdot \frac{s}{\sqrt{n}} \)</span></strong>
+                                                            where:
+                                                            <ul>
+                                                                <li>\(\bar{x}\) is the sample mean.</li>
+                                                                <li>\(t\) is the t-score from the t-distribution corresponding to the desired confidence level and degrees of freedom (\(n-1\)).</li>
+                                                                <li>\(s\) is the sample standard deviation.</li>
+                                                                <li>\(n\) is the sample size.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Confidence Interval for Proportions: <span class="highlight">\( \hat{p} \pm z \cdot \sqrt{\frac{\hat{p} \cdot (1 - \hat{p})}{n}} \)</span></strong>
+                                                            where:
+                                                            <ul>
+                                                                <li>\(\hat{p}\) is the sample proportion.</li>
+                                                                <li>\(z\) is the z-score corresponding to the desired confidence level.</li>
+                                                                <li>\(n\) is the sample size.</li>
+                                                            </ul>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Conditions for Inference on a Proportion:</strong>
+                                                                    <ul>
+                                                                        <li><strong>Random:</strong> The data needs to come from a random sample or randomized experiment.</li>
+                                                                        <li><strong>Normal:</strong> At least 10 expected successes and 10 expected failures.</li>
+                                                                        <li><strong>Independent:</strong> If sampling without replacement, the sample size should be less than 10% of the population.</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Confidence Interval for the Mean Difference of Paired Data: <span class="highlight">\( \bar{d} \pm t \cdot \frac{s_d}{\sqrt{n}} \)</span></strong>
+                                                            where:
+                                                            <ul>
+                                                                <li>\(\bar{d}\) is the mean difference between paired observations.</li>
+                                                                <li>\(t\) is the t-score from the t-distribution corresponding to the desired confidence level and degrees of freedom (\(n-1\)).</li>
+                                                                <li>\(s_d\) is the sample standard deviation of the differences.</li>
+                                                                <li>\(n\) is the number of paired observations.</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                
+                                                <li><strong>Z Statistic vs T Statistic:</strong> The number of standard errors is used to calculate the statistic based on the confidence level. The Z statistic is used for large sample sizes or known population standard deviation, while the T statistic is used for smaller samples or unknown population standard deviation.</li>
+                                                <ul>
+                                                    <li><strong>Z Statistic:</strong> 
+                                                        <span class="highlight">\( Z = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}} \)</span>
+                                                        <ul>
+                                                            <li>\(\bar{x}\) is the sample mean.</li>
+                                                            <li>\(\mu\) is the population mean.</li>
+                                                            <li>\(\sigma\) is the population standard deviation.</li>
+                                                            <li>\(n\) is the sample size.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><strong>T Statistic:</strong> 
+                                                        <span class="highlight">\( T = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} \) (\(df = n - 1\))</span>
+                                                        <ul>
+                                                            <li>\(\bar{x}\) is the sample mean.</li>
+                                                            <li>\(\mu\) is the population mean.</li>
+                                                            <li>\(s\) is the sample standard deviation.</li>
+                                                            <li>\(n\) is the sample size.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><strong>Selection:</strong> 
+                                                        <div class="image-container">
+                                                            <img src="images/Test-statistic.png" alt="Test Statistic">
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                
+
+                                                <li><strong>Hypothesis Testing:</strong> A method for making inferences about a population based on sample data.</li>
+
+                                                <li><strong>ANOVA (Analysis of Variance):</strong> Compares means of three or more groups to determine significant differences.</li>
+                                            </ul>
+                                        </div>
+                                    
+                                        <div class="section">
+                                            <h2>Relationships and Models</h2>
+                                            <ul>
+                                                <li><strong>Correlation:</strong> Measures the strength and direction of a linear relationship between two variables.</li>
+                                                <li><strong>Linear Regression:</strong> Models the relationship between a dependent variable and one or more independent variables.</li>
+                                                <li><strong>A/B Testing:</strong> Compares two versions of a variable to determine which performs better.</li>
+                                                <li><strong>Cosine Similarity:</strong> Measures similarity between two vectors of an inner product space, often used in text analysis.</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="section">
+                                            <h2>Probability</h2>
+                                            <ul>
+                                                <li><strong>Probability Rules:</strong> Basic principles for calculating probabilities.</li>
+                                                <li><strong>Bayes Theorem:</strong> Describes the probability of an event based on prior knowledge.</li>
+                                                <li><strong>Combinations and Permutations:</strong> Methods for counting and arranging objects.</li>
+                                            </ul>
+                                        </div>
+                                    
+                                        <div class="section">
+                                            <h2>Advanced Topics</h2>
+                                            <ul>
+                                                <li><strong>Bayesian Methods:</strong> Statistical methods that involve updating probabilities based on new evidence.</li>
+                                            </ul>
+                                        </div>
+                                        <!-- <li><strong>Population Variance:</strong> Calculated by dividing by N (the number of data points).</li>
+                                                <li><strong>Sample Variance:</strong> Calculated by dividing by N-1 to avoid bias.</li>
+                                                <li><strong>Mean Absolute Deviation:</strong> Average distance between each data point and the mean.</li>
+                                                <li><strong>Z-Score:</strong> Measures how many standard deviations a data point is from the mean.</li>
+                                                <li><strong>Mean Shift and Scale:</strong> Adding a constant shifts the mean and median; multiplying scales all measures.</li>
+                                                <li><strong>Density Curve:</strong> Represents the distribution of data points.</li>
+                                                <li><strong>Normal Distribution (Empirical Rule):</strong> 68% within 1 SD, 95% within 2 SD, 99.7% within 3 SD.</li> -->
+                                        
+                                                <!-- <div class="section">
+                                            <h2>Regression and Correlation</h2>
+                                            <ul>
+                                                <li><strong>Correlation Coefficient:</strong> Measures the strength and direction of the linear relationship between two variables.</li>
+                                                <li><strong>Linear Regression:</strong> Uses a line to summarize the relationship between variables. Key metrics include slope, residuals, and Sum of Squared Residuals (SSR).</li>
+                                                <li><strong>R-Squared:</strong> Indicates the percentage of variation in Y explained by X. Calculated as 1 - (SSR/SST).</li>
+                                                <li><strong>Root Mean Square Error (RMSD):</strong> Standard deviation of residuals. Lower RMSD indicates a better model.</li>
+                                                <li><strong>Residual Plot:</strong> Evaluates the fit of a regression model. Evenly scattered points suggest a good model.</li>
+                                            </ul>
+                                        </div>
+                                
+                                        <div class="section">
+                                            <h2>Advanced Topics</h2>
+                                            <ul>
+                                                <li><strong>Combining Random Variables:</strong> When combined, normally distributed variables remain normally distributed.</li>
+                                                <li><strong>Binomial Distribution:</strong> Describes the number of successes in a fixed number of trials. The expected value is np and variance is np(1-p).</li>
+                                                <li><strong>Central Limit Theorem:</strong> The distribution of sample means approximates a normal distribution as sample size increases.</li>
+                                                <li><strong>Confidence Intervals:</strong> Provide a range of plausible values for a population parameter. Calculated using sample means and standard errors.</li>
+                                                <li><strong>Significance Tests:</strong> Tests null hypotheses against alternative hypotheses. Calculated using p-values and significance levels (α).</li>
+                                                <li><strong>Chi-Square Test:</strong> Measures the difference between observed and expected frequencies. Useful for categorical data analysis.</li>
+                                                <li><strong>ANOVA:</strong> Compares means across multiple groups to determine if there are significant differences.</li>
+                                            </ul>
+                                        </div>
+
+                                       -->
+
+                                        <div class="section">
+                                        <h2>Courses Attended</h2>
+                                            <h3>Georgetown University (DSAN Program):</h3>
+                                            <ul>
+                                                <li>Probabilistic Modeling and Statistical Computing</li>
+                                                <li>Statistical Learning</li>
+                                            </ul>
+                                            <h3>Khan Academy:</h3>
+                                            <ul>
+                                                <li>Statistics and Probability</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+									
+								</section>
+
+						</div>
+					</div>
+
+                <!-- Sidebar -->
+				<div id="sidebar-container"></div>
+				
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+					  fetch('sidebar.html')
+						.then(response => response.text())
+						.then(data => {
+						  document.getElementById('sidebar-container').innerHTML = data;
+			  
+						  // Load scripts after sidebar content is added
+						  const scripts = [
+							'assets/js/jquery.min.js',
+							'assets/js/browser.min.js',
+							'assets/js/breakpoints.min.js',
+							'assets/js/util.js',
+							'assets/js/main.js',
+							'assets/js/search.js'
+						  ];
+			  
+						  scripts.reduce((promise, script) => {
+							return promise.then(() => {
+							  return new Promise((resolve, reject) => {
+								const s = document.createElement('script');
+								s.src = script;
+								s.onload = resolve;
+								s.onerror = reject;
+								document.body.appendChild(s);
+							  });
+							});
+						  }, Promise.resolve())
+						  .then(() => {
+							console.log('All scripts loaded successfully.');
+							// Ensure initialization of search after all scripts are loaded
+							if (typeof window.initializeSearch === 'function') {
+							  window.initializeSearch();
+							}
+						  })
+						  .catch(error => {
+							console.error('Error loading script:', error);
+						  });
+						})
+						.catch(error => console.error('Error loading sidebar:', error));
+					});
+				</script>	
+		</div>	
+
+	</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
