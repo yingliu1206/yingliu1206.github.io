@@ -83,11 +83,18 @@
                                         
                                         <div class="section">
                                             <h2>Statistics Measures</h2>
-                                            <ul>
+                                            <ul class="compact-list">
                                                 <li><strong>Mean:</strong> The mean is a measure of central tendency, calculated as the sum of all values divided by the number of values. It can be significantly influenced by extremely high or low values in the dataset.</li>
                                                 <li><strong>Median:</strong> The median represents the middle value when the data is sorted in ascending order. It is less affected by outliers compared to the mean.</li>
                                                 <li><strong>Mode:</strong> The mode is the value that appears most frequently in the dataset.</li>
                                                 <li><strong>Outliers:</strong> Outliers are values that differ significantly from other observations. In a normal distribution, outliers are often defined as values that fall outside the range of <span class="highlight">Q3 + 1.5 * IQR</span> or <span class="highlight">Q1 - 1.5 * IQR</span>.</li>
+                                                <li>
+                                                    <strong>Z-Score:</strong>
+                                                    A z-score measures exactly how many standard deviations above or below the mean a data point is. We can determine thresholds (e.g., 2, 2.5, 3) to decide on outliers.
+                                                    <ul>
+                                                        <li>Z-scores can be applied to all distributions, not just normal distributions.</li>
+                                                    </ul>
+                                                </li>
                                                 <li><strong>Interquartile Range (IQR):</strong> The IQR is the range between the first quartile (Q1) and the third quartile (Q3), encompassing the middle 50% of the data. It helps in identifying the spread and detecting outliers.</li>
                                                 <!-- Visual Representation -->
                                                 <div class="image-container">
@@ -507,8 +514,292 @@
                                                     </ul>
                                                 </li>
 
+                                                <li><strong>Chi-Square Testing</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Chi-Square Distribution:</strong>
+                                                            A chi-square statistic measures the difference between observed and expected frequencies in categorical variables. It is useful for analyzing differences in nominal categorical variables.
+                                                            <div class="example">
+                                                                <strong>Example Probability:</strong>
+                                                                <code>P(Q<sub>2</sub> &gt; 2.41) = 0.3</code>
+                                                                <div class="image-container">
+                                                                    <img src="images/chi-square distribution.png" alt="Chi-Square Distribution">
+                                                                    <img src="images/chi-square distribution2.png" alt="Chi-Square Distribution">
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </li>
+
+                                                        <li><strong>Conditions for Inference:</strong>
+                                                            <ul>
+                                                                <li><strong>Random:</strong> A random sample or randomized experiment should be used to obtain the data.</li>
+                                                                <li><strong>Normal:</strong> The expected number of each category outcome should be ≥ 5.</li>
+                                                                <li><strong>Independent:</strong> The sample size should be less than 10% of the population if sampling without replacement.</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li><strong>Types of Chi-Square Tests:</strong>
+                                                            <ul>
+                                                                <ol>
+                                                                    <li><strong>Pearson's Chi-Square Test (Goodness of Fit):</strong> Assesses how well the observed frequencies fit the expected frequencies.</li>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="example">
+                                                                                <strong>Example:</strong>
+                                                                                <div class="image-container">
+                                                                                    <img src="images/pearson's chi-square.png" alt="Design a Chi-Square Test">
+                                                                                </div>
+                                                                            </div>                                                            
+                                                                        </li> 
+                                                                    </ul>
+                                                                    <li><strong>Test for Association (Independence):</strong> Evaluates the association between two variables within the same population.</li>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="example">
+                                                                                <strong>Example:</strong><br>
+                                                                                - Sample: Measure foot and hand length in the same population<br>
+                                                                                - Hypotheses:<br>
+                                                                                - <code>H<sub>0</sub></code>: No association between foot and hand length (independent).<br>
+                                                                                - <code>H<sub>a</sub></code>: There is an association.</p>
+                                                                                <div class="image-container">
+                                                                                    <img src="images/chi-square-association.png" alt="Chi-Square Test for Association">
+                                                                                </div>
+                                                                            </div>                                                            
+                                                                        </li> 
+                                                                    </ul>
+                                                                    <li><strong>Test for Homogeneity:</strong> Compares distributions across different populations.</li>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="example">
+                                                                                <strong>Example:</strong><br>
+                                                                                - Sample: 20 left-handed and 30 right-handed individuals<br>
+                                                                                - Hypotheses:<br>
+                                                                                - <code>H<sub>0</sub></code>: No difference in subject preference between left and right-handed individuals.<br>
+                                                                                - <code>H<sub>a</sub></code>: There is a difference.</p>
+                                                                                <div class="image-container">
+                                                                                    <img src="images/chi-square-homo.png" alt="Chi-Square Test for Homogeneity">
+                                                                                </div>
+                                                                            </div>                                                            
+                                                                        </li> 
+                                                                    </ul>
+                                                                </ol>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li>
+                                                            <strong>Filling out frequency table for independent events</strong>
+                                                            <div class="image-container">
+                                                                <img src="images/fill_out_frequency_table.png" alt="Filling out frequency tablefor independent events">
+                                                            </div>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <strong>Degrees of Freedom:</strong>
+                                                            <p><code>Degrees of Freedom = (Number of Columns - 1) × (Number of Rows - 1)</code></p>
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
 
                                                 <li><strong>ANOVA (Analysis of Variance):</strong> Compares means of three or more groups to determine significant differences.</li>
+                                                <ul>
+                                                    <li>
+                                                        <div class="example">
+                                                            <strong>Example 1: Testing Food Preferences</strong><br>
+                                                            Let's say we want to test if three different types of food (1, 2, and 3) have different effects on a preference score. We have the following:<br>
+                                                            <ul>
+                                                                <li><strong>M:</strong> Number of groups (3)</li>
+                                                                <li><strong>N:</strong> Number of elements in each group</li>
+                                                            </ul>
+
+                                                            <ul>
+                                                                <ol>
+                                                                    <li>
+                                                                        <strong>Calculate SST (Total Sum of Squares)</strong><br>
+                                                                                Degrees of freedom: <code>M*N - 1</code>
+                                                                                <div class="image-container">
+                                                                                    <img src="images/anova1.png" alt="Testing Food Preferences">
+                                                                                </div>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <strong>Calculate SSW (Sum of Squares Within) and SSB (Sum of Squares Between)</strong><br>
+                                                                                Figure out how much SST is caused by the variance within the group and between the groups:
+                                                                                <ul>
+                                                                                    <li><strong>SSW:</strong> Sum of squares within the group, Degrees of freedom: <code>M*(N-1)</code></li>
+                                                                                    <li><strong>SSB:</strong> Sum of squares between the groups, Degrees of freedom: <code>M-1</code></li>
+                                                                                </ul>
+                                                                                <div class="image-container">
+                                                                                    <img src="images/anova-ssw.png" alt="Testing Food Preferences">
+                                                                                    <img src="images/anova-ssb.png" alt="Testing Food Preferences">
+                                                                                </div>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <strong>According to the formula: <code>SST = SSW + SSB</code></strong><br>
+                                                                        <div class="image-container">
+                                                                            <img src="images/anova-sst.png" alt="Testing Food Preferences">
+                                                                        </div>
+                                                                    </li>
+
+                                                                    <li><strong>Hypothesis test:</strong> 
+                                                                        <ul>
+                                                                            <li><code>H<sub>0</sub></code>: Food does not make a difference: <code>μ1 = μ2 = μ3</code></li>
+                                                                            <li><code>H<sub>a</sub></code>: There is a difference</li>
+                                                                            <li><strong>α:</strong> 0.10</li>
+                                                                        </ul>
+                                                                    </li>
+
+                                                                    <li><strong>Calculate the F-statistic:</strong> 
+                                                                        <div class="image-container">
+                                                                            <img src="images/anova-F.png" alt="Testing Food Preferences">
+                                                                        </div>
+                                                                        <ul>
+                                                                            <li>If the numerator is larger (variance between groups is larger), <code>H<sub>a</sub></code> is more likely to be true, and <code>F</code> is larger.</li>
+                                                                            <li>If the denominator is larger (variance within groups is larger), it is harder to reject <code>H<sub>0</sub></code>, and <code>F</code> is smaller.</li>
+                                                                        </ul>
+                                                                    </li>
+
+                                                                    <li><strong>Conclusion:</strong> 
+                                                                        <div class="image-container">
+                                                                            <img src="images/anova-f2.png" alt="Testing Food Preferences">
+                                                                        </div>
+                                                                        <div class="image-container">
+                                                                            <img src="images/anova-f3.png" alt="Testing Food Preferences">
+                                                                        </div>
+                                                                        <ul>
+                                                                            <li>Both the denominator and numerator follow a Chi-square distribution.</li>
+                                                                            <li>Suppose the F-statistic calculated is 3.46 and the critical value is 12. We have enough evidence to reject <code>H0</code>.</li>
+                                                                        </ul>
+                                                                    </li>
+
+                                                                </ol>
+                                                            </ul>
+                                                        </div>                                                            
+                                                    </li> 
+                                            
+                                                    <li>
+                                                        <strong>Example 2: Species Comparison</strong><br>
+                                                        <strong>Distribution of Petal Length by Species:</strong><br>
+                                                        <p>In this example, we performed an ANOVA test in Python to analyze the differences in the petal length of three different species of iris: setosa, versicolor, and virginica.</p>
+                                                        <p>We loaded the iris dataset using the seaborn library, which contains information about the petal length, width, and other variables for each species of iris. We separated each species' petal length data into three sets: <code>setosa_petal_length</code>, <code>versicolor_petal_length</code>, and <code>virginica_petal_length</code>. The ANOVA test was performed using the <code>f_oneway()</code> function from the <code>scipy.stats</code> library, which provided the F-statistic and p-value.</p>
+                                            
+                                                        <p><strong>Here is the code:</strong></p>
+                                                        <pre><code>from scipy.stats import f_oneway
+import seaborn as sns
+
+# load the 'iris' dataset
+iris = sns.load_dataset('iris')
+
+# perform the ANOVA test
+setosa_petal_length = iris[iris['species'] == 'setosa']['petal_length']
+versicolor_petal_length = iris[iris['species'] == 'versicolor']['petal_length']
+virginica_petal_length = iris[iris['species'] == 'virginica']['petal_length']
+
+f_statistic, p_value = f_oneway(setosa_petal_length, versicolor_petal_length, virginica_petal_length)
+
+# print the results
+print('F-statistic:', f_statistic)
+print('p-value:', p_value)</code></pre>
+                                            
+                                                        <p><strong>Output Example:</strong></p>
+                                                        <pre><code>F-statistic: 1180.16
+p-value: 2.86e-91</code></pre>
+                                                        <p>The resulting F-statistic was 1180.16, indicating a significant difference between the means of the petal length for the three species. The p-value was 2.86e-91, a very small value close to zero, indicating that the probability of observing such a large F-statistic by chance alone is very low. Therefore, we reject the null hypothesis that there is no significant difference between the means of petal length for the three species. We conclude that there is a significant difference between the means of petal length for at least one pair of species.</p>
+                                                    </li>
+                                                </ul>
+                                            </ul>
+                                        </div>
+
+                                        <div class="section">
+                                            <h2>A/B Testing</h2>
+                                            A/B testing is an experiment comparing two variants to determine which performs better based on a given metric. It is essentially a form of two-sample hypothesis testing used to assess whether the differences between two samples are statistically significant.
+                                            <ul class="compact-list">
+                                                <li>
+                                                    <strong>Steps to Conduct an A/B Test:</strong>
+                                                    <ul>
+                                                        <li>State the null and alternative hypotheses.</li>
+                                                        <li>Set the significance level (α).</li>
+                                                        <li>Collect sample data and calculate the sample statistics.</li>
+                                                        <li>Calculate the p-value according to the type of A/B test.</li>
+                                                        <li>Compare the p-value to the significance level to determine whether to reject the null hypothesis.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <strong>Choosing the Right Metric:</strong> The metric should be relevant to the test goal. Common metrics include conversion rate, click-through rate, or revenue.
+                                                </li>
+                                                <li>
+                                                    <strong>Defining Hypotheses:</strong> Clearly specify the null and alternative hypotheses and set the significance level before conducting the test.
+                                                </li>
+                                                <li>
+                                                    <strong>Sample Size Considerations:</strong> The sample size should be large enough to detect a meaningful difference but manageable in terms of cost and time. Factors to consider include expected effect size, significance level, and statistical power.
+                                                </li>
+                                                <li>
+                                                    <strong>Real-Life Applications:</strong> A/B testing can be applied in various scenarios, such as:
+                                                    <ul>
+                                                        <li>A software company testing two feature versions to measure user engagement.</li>
+                                                        <li>A fashion retailer comparing two product descriptions to determine which leads to more sales.</li>
+                                                        <li>An e-commerce platform evaluating two checkout processes to see which results in more completed orders.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <strong>In-depth understanding:</strong> <a href="https://towardsdatascience.com/a-b-testing-a-complete-guide-to-statistical-testing-e3f1db140499" target="_blank">Francesco’s article on A/B testing</a>.
+                                                </li>
+                                                <li>
+                                                    <strong>Methods:</strong> 
+                                                    <ul>
+                                                        <ol>
+                                                            <li>
+                                                                <strong>Fisher’s Exact Test:</strong> This test is used for discrete metrics like clickthrough rates (1 for yes, 0 for no). It computes the exact p-value, though it can be computationally expensive for large sample sizes.
+                                                            
+                                                                <div class="example">
+                                                                    <strong>Example: Advertising Campaign</strong>
+                                                                    <p>Suppose you're a marketing researcher testing a new advertising campaign's effectiveness. You randomly assign website visitors to see either the new or old ads and record their clickthrough rates. Fisher's test can help determine if the new ads are significantly more effective in increasing clickthrough rates compared to the old ads.</p>
+                                                                </div>
+                                                            </li>
+                                                            
+                                                            <li>
+                                                                <strong>Pearson’s Chi-squared Test:</strong> This test is an alternative to Fisher’s test for <u>large sample sizes</u> and is used for discrete metrics.
+                                                                <div class="example">
+                                                                    <strong>Example: Marketing Research</strong>
+                                                                    <p>Consider a company that wants to explore the relationship between customer age groups (young, middle-aged, elderly) and their preferred product categories (food, clothing, electronics). They collect data from 500 customers and use Pearson's Chi-squared test to see if there is a significant association between age and product preference.</p>
+                                                                </div>
+                                                            </li>
+                                                            
+                                                            <li>
+                                                                <strong>Student’s t-test:</strong> Used when the <u>sample size is large or the population standard deviation is unknown</u>. Suitable for comparing means when the samples have similar variances.
+                                                            
+                                                                <div class="example">
+                                                                    <strong>Example: Teaching Method Testing</strong>
+                                                                    <p>A study comparing the effectiveness of two teaching methods involves two groups of students. Each group receives a different method, and their test scores are compared using Student's t-test to determine if the new method significantly improves scores over the traditional method.</p>
+                                                                </div>
+                                                            </li>
+                                                            
+                                                            <li>
+                                                                <strong>Welch’s Test:</strong> A variant of the Student’s t-test used when the two samples have <u>unequal variances</u>.
+                                                            
+                                                                <div class="example">
+                                                                    <strong>Example: Salary Testing</strong>
+                                                                    <p>To compare salaries between managers and entry-level employees, researchers use Welch’s t-test because the salaries' variability differs between the two groups. This test helps determine if there's a significant salary gap despite the unequal variances.</p>
+                                                                </div>
+                                                            </li>
+                                                            
+                                                            <li>
+                                                                <strong>Mann-Whitney U Test:</strong> A non-parametric test used when assumptions for other tests (e.g., normality) are violated. Suitable for <u>small sample sizes and non-normal distributions</u>.
+                                                            
+                                                                <div class="example">
+                                                                    <strong>Example: Medication Testing</strong>
+                                                                    <p>In a study comparing the effectiveness of two pain medications with non-normally distributed data, the Mann-Whitney U test is used. Patients rate their pain after taking each medication, and the test helps determine if there is a significant difference in pain relief between the two treatments without assuming normality.</p>
+                                                                </div>
+                                                            </li>
+                                                            
+                                                            <li>
+                                                                <strong>For more details on how to conduct these tests in Python, check out this <a href="https://github.com/FrancescoCasalegno/AB-Testing/blob/main/AB_Testing.ipynb" target="_blank">repository</a>.</strong>
+                                                            </li>
+                                                        </ol>
+                                                    </ul>
+                                                </li>
+
                                             </ul>
                                         </div>
                                     
