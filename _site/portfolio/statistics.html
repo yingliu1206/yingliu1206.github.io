@@ -46,9 +46,11 @@
             .image-container {
             text-align: left;
             margin: 5px 0;
+            flex-wrap: wrap;
+            gap: 10px; /* Adjust the spacing between images as needed */
             }
             .image-container img {
-                max-width: 50%;
+                max-width: 48%;
                 height: auto;
             }
         </style>
@@ -395,8 +397,116 @@
                                                     </li>
                                                 </ul>
                                                 
+                                                <li>
+                                                    <strong>Hypothesis Testing:</strong>
+                                                    <ul>
+                                                        <li>
+                                                            Hypothesis testing is a method in which a sample dataset is compared against the population data. <strong><span class="highlight">Using Sample to Estimate Population Characteristics:</span></strong>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Steps for performing a hypothesis test:</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>State your null and alternative hypotheses:</strong> The null hypothesis (H<sub>0</sub>) generally assumes no change, while the alternative hypothesis (H<sub>a</sub>) suggests a deviation from the null hypothesis.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Set your significance level (α):</strong> Typically set at 5% (α = 0.05), but it can vary depending on the severity of Type I (false positive) and Type II (false negative) errors in the situation.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Collect sample data and calculate sample statistics:</strong> Use the Z-statistic or T-statistic based on the sample size and distribution of the data.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Calculate the p-value:</strong> The p-value is derived from the sample statistics and indicates the likelihood of observing the data under the null hypothesis. Common approaches are based on T-scores and Z-scores for normal distributions.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Make a decision:</strong> Based on the p-value, reject or do not reject the null hypothesis. If the p-value is less than the significance level, reject the null hypothesis.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Statistical Significance:</strong> 
+                                                                    <ul>
+                                                                        <li>If \( P < \alpha \), then the result is considered statistically significant.</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Type I and Type II Errors:</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Type I Error:</strong> Occurs when we reject the null hypothesis when it is actually true.
+                                                                    <ul>
+                                                                        <li>Also known as a "false positive."</li>
+                                                                        <li>The probability of making a Type I error is denoted by alpha (α), which is the significance level of the test.</li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Type II Error:</strong> Occurs when we fail to reject the null hypothesis when it is actually false.
+                                                                    <ul>
+                                                                        <li>Also known as a "false negative."</li>
+                                                                        <li>The probability of making a Type II error is denoted by beta (β).</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <strong>Power of a Test:</strong>
+                                                            <ul>
+                                                                <li>Power = P(not making a Type II error)</li>
+                                                                <li>
+                                                                    A higher power reduces the likelihood of committing a Type II error (failing to reject a false null hypothesis).
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Methods to increase power:</strong>
+                                                                    <ul>
+                                                                        <li>Increase the sample size.</li>
+                                                                        <li>Increase the significance level α. <em>(Note: this may increase the risk of a Type I error)</em></li>
+                                                                        <li>Reduce variability in the data (control experimental conditions).</li>
+                                                                        <li>Choose a larger effect size (the difference between the null and alternative hypotheses).</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
 
-                                                <li><strong>Hypothesis Testing:</strong> A method for making inferences about a population based on sample data.</li>
+                                                        <li>
+                                                            <strong>Example 1:</strong> Calculating the Z test and p-value for a proportion:
+                                                            <div class="image-container">
+                                                                <img src="images/z test example.png" alt="Z test example">
+                                                            </div>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <strong>Example 2:</strong> Calculating the t test and p-value for a mean:
+                                                            <div class="image-container">
+                                                                <img src="images/t test example.png" alt="T test example">
+                                                            </div>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <strong>Example 3:</strong> Two-sample inference for the difference between groups:
+                                                            <ul>
+                                                                <li>Mean of Sample 1: <em>mean<sub>P1</sub></em>, Variance of Sample 1: <em>var<sub>P1</sub></em></li>
+                                                                <li>Mean of Sample 2: <em>mean<sub>P2</sub></em>, Variance of Sample 2: <em>var<sub>P2</sub></em></li>
+                                                                <li>Mean of the Difference: \( \text{mean}_{\text{diff}} = \text{mean}_{\text{P1}} - \text{mean}_{\text{P2}} \)</li>
+                                                                <li>Variance of the Difference: \( \text{var}_{\text{diff}} = \text{var}_{\text{P1}} + \text{var}_{\text{P2}} \)</li>
+                                                            </ul>
+                                                            <div class="image-container">
+                                                                <img src="images/two-sample1.png" alt="Two-sample inference for the difference between groups">
+                                                                <img src="images/two-sample2.png" alt="Two-sample inference for the difference between groups">
+                                                            </div>
+                                                            <div class="image-container">
+                                                                <img src="images/two-sample3.png" alt="Two-sample inference for the difference between groups">
+                                                                <img src="images/two-sample4.png" alt="Two-sample inference for the difference between groups">
+                                                            </div>
+                                                            <div class="image-container">
+                                                                <img src="images/two-sample5.png" alt="Two-sample inference for the difference between groups">
+                                                                <img src="images/two-sample6.png" alt="Two-sample inference for the difference between groups">
+                                                            </div>
+                                                        </li>                                   
+
+                                                    </ul>
+                                                </li>
+
 
                                                 <li><strong>ANOVA (Analysis of Variance):</strong> Compares means of three or more groups to determine significant differences.</li>
                                             </ul>
