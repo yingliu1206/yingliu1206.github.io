@@ -87,6 +87,10 @@
                                                 <li><strong>Mean:</strong> The mean is a measure of central tendency, calculated as the sum of all values divided by the number of values. It can be significantly influenced by extremely high or low values in the dataset.</li>
                                                 <li><strong>Median:</strong> The median represents the middle value when the data is sorted in ascending order. It is less affected by outliers compared to the mean.</li>
                                                 <li><strong>Mode:</strong> The mode is the value that appears most frequently in the dataset.</li>
+                                                <li><strong>Mean Absolute Deviation:</strong> The mean absolute deviation of a dataset is the average distance between each data point and the mean. It gives us an idea about the <span class="highlight">variability in a dataset</span>.</li>
+                                                <div class="image-container">
+                                                    <img src="images/mad.png" alt="MAD" style="max-width: 22%">
+                                                </div>
                                                 <li><strong>Outliers:</strong> Outliers are values that differ significantly from other observations. In a normal distribution, outliers are often defined as values that fall outside the range of <span class="highlight">Q3 + 1.5 * IQR</span> or <span class="highlight">Q1 - 1.5 * IQR</span>.</li>
                                                 <li>
                                                     <strong>Z-Score:</strong>
@@ -805,65 +809,255 @@ p-value: 2.86e-91</code></pre>
                                     
                                         <div class="section">
                                             <h2>Relationships and Models</h2>
-                                            <ul>
-                                                <li><strong>Correlation:</strong> Measures the strength and direction of a linear relationship between two variables.</li>
-                                                <li><strong>Linear Regression:</strong> Models the relationship between a dependent variable and one or more independent variables.</li>
-                                                <li><strong>A/B Testing:</strong> Compares two versions of a variable to determine which performs better.</li>
-                                                <li><strong>Cosine Similarity:</strong> Measures similarity between two vectors of an inner product space, often used in text analysis.</li>
+                                            <ul class="compact-list">
+                                                <li><strong>Cosine Similarity:</strong> Cosine similarity is a way to measure how similar two sets of things are. The more similar the two sets of things are, the closer they are to each other in this space. The cosine similarity is calculated by looking at the angle between the two sets of things. If the angle is 0 degrees, that means they are exactly the same. If the angle is 90 degrees, that means they are completely different.
+                                                    <div class="image-container">
+                                                        <img src="images/cosine.png" alt="Cosine Similarity">
+                                                    </div>
+                                                    <strong>Example: Collaborative Filtering in Netflix</strong><br>
+                                                    Collaborative filtering often uses cosine similarity to measure the similarity between items or users in a recommendation system. A real-life example of collaborative filtering is the recommendation system used by Netflix. Netflix uses collaborative filtering to recommend movies and TV shows to its users based on their viewing history and the viewing history of similar users. When a user watches a movie or TV show, the system analyzes the user's viewing history and compares it to others with similar viewing histories. Based on this, Netflix recommends other movies and TV shows that the user might enjoy.
+                                                </li>
+
+                                                <li><strong>Correlation:</strong> 
+                                                    Correlation is a statistical measure that analyzes the strength of the relationship between two variables. It ranges from -1 to 1:
+                                                    <div class="image-container">
+                                                        <img src="images/correlation.png" alt="Correlation">
+                                                    </div>
+                                                    <ul>
+                                                        <li>A value of -1 indicates a <strong>perfect negative correlation</strong>.</li>
+                                                        <li>A value of 0 indicates <strong>no correlation</strong>.</li>
+                                                        <li>A value of 1 indicates a <strong>perfect positive correlation</strong>.</li>
+                                                    </ul>
+                                                    While correlation does not imply causation, it can help identify potential relationships between variables.
+                                                    <br>
+                                                    <strong>Note:</strong> Correlation describes the relationship between variables, whereas causation occurs when one event is the direct result of another.
+                                                    <div class="image-container">
+                                                        <img src="images/CorrelationvsCausation.png" alt="Correlation vs Causation">
+                                                    </div>
+                                                </li>
+
+                                                <li><strong>Linear Regression:</strong> 
+                                                    Linear regression uses a line to summarize the relationship between one or more independent variables (x) and a dependent variable (y). It finds the 'line of best fit' by minimizing the squared distances between the points and the line, known as least squares regression. <br>
+                                                    <ul class="compact-list">
+                                                        <li><strong>Key Concepts:</strong></li>
+                                                        <ul>
+                                                            <li><strong>Slope:</strong> Δy / Δx</li>
+                                                            <li><strong>Residual:</strong> y_actual - y_predicted</li>
+                                                            <li><strong>Sum of Squared Residuals (SSR):</strong> The sum of the squared residuals</li>
+                                                        </ul>
+
+                                                        <li><strong>Steps to Calculate the Least Squares Regression Line:</strong>
+                                                            <ul>
+                                                                <li>Calculate the correlation coefficient.</li>
+                                                                <div class="image-container">
+                                                                    <img src="images/correlation coefficient.png" alt="Correlation Coefficient">
+                                                                </div>
+                                                                <li>Slope = <code>r * sd_y / sd_x</code>, where <code>r</code> is the correlation coefficient, <code>sd_y</code> is the standard deviation of the dependent variable, and <code>sd_x</code> is the standard deviation of the independent variable.</li>
+                                                                <li>The model line must pass through <code>(x̄, ȳ)</code>, where <code>x̄</code> and <code>ȳ</code> are the means of the independent and dependent variables, respectively.</li>
+                                                                <div class="image-container">
+                                                                    <img src="images/linear regression.png" alt="Linear Regression">
+                                                                </div>
+                                                                <li>Two points must pass by the least squares regression line:</li>
+                                                                <div class="image-container">
+                                                                    <img src="images/two points in regression line.png" alt="Two points in Regression Line" style="max-width: 60%;">
+                                                                </div>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li><strong>Covariance:</strong> <code>Cov(X, Y)</code>
+                                                            <ul>
+                                                                <li><strong>Slope:</strong> <code>Slope = Cov(X, Y) / Var(X)</code></li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li><strong>Residual plot can evaluate the linear regression model:</strong>
+                                                            <div class="image-container">
+                                                                <img src="images/residual plot 1.png" alt="Residual Plot">
+                                                            </div>
+                                                                <ul>
+                                                                    <li>If the points are evenly scattered → good model</li>
+                                                                    <div class="image-container">
+                                                                        <img src="images/residual plot2.png" alt="Residual Plot">
+                                                                    </div>
+                                                                    <li>If the points are not evenly scattered or far away from the x-axis or have a pattern → bad model → maybe it is a non-linear curve</li>
+                                                                    <div class="image-container">
+                                                                        <img src="images/residual plot3.png" alt="Residual Plot">
+                                                                        <img src="images/residual plot4.png" alt="Residual Plot">
+                                                                    </div>
+                                                                </ul>
+                                                        </li>
+
+                                                        <li><strong>Variable Selection:</strong> Two common approaches for selecting variables are:
+                                                            <ul>
+                                                                <li><strong>Backward Elimination:</strong> Removing one variable at a time.</li>
+                                                                <li><strong>Forward Selection:</strong> Adding one variable at a time.</li>
+                                                            </ul>
+                                                        You can evaluate a variable's significance in the model by its p-value (≤ 0.05 is generally considered significant).
+                                                        </li>           
+
+                                                        <li><strong>Model Evaluation:</strong>
+                                                            <ul>
+                                                                <li><strong>R-squared (coefficient of determination):</strong> Indicates what percentage of the variation in Y is described by the variation in X
+                                                                    <ul>
+                                                                        <li>Sum of Squared Residuals (SSR): The sum of residuals squared; <span class="highlight">measures the variance of Y that is not explained by the model.</span></li>
+                                                                        <li>Total Sum of Squares (SST): The sum of squared <code>(y_i - &#772;y)</code>; <span class="highlight">measures the total variance of Y from its mean.</span></li>
+                                                                        <li>Percentage of variation not described by X: <code>SSR / SST</code></li>
+                                                                        <li><strong>R-squared = 1 - SSR / SST</strong></li>
+                                                                        <li>SSR is small → R-squared is close to 1 → good model</li>
+                                                                        <li>SSR is large → R-squared is close to 0 → bad model</li>
+                                                                        <li>R-squared can also be calculated by <code>(Correlation coefficient)^2</code></li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li><strong>Adjusted R-squared: </strong> adjusts for the number of predictors in the model, increasing if the new term improves the model.</li>
+                                                                <li><strong>Root-Mean-Square Error (RMSD):</strong> Sample standard deviation of residuals; represents typical prediction error. The lower the RMSD, the better the model.</li>
+                                                                <div class="image-container">
+                                                                    <img src="images/RMSD.png" alt="RMSD" style="max-width: 30%;">
+                                                                </div>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li><strong>Common Pitfalls:</strong> 
+                                                            <ul>
+                                                                <li><strong>Overfitting:</strong> When the model fits the data too well, leading to high variance and low bias, which may result in poor predictions on new data.</li>
+                                                                <li><strong>Collinearity:</strong> When two independent variables are highly correlated, reducing the model's accuracy.</li>
+                                                                <li><strong>Confounding Variables:</strong> Variables that affect both the independent and dependent variables but are not included in the model.</li>
+                                                            </ul>
+                                                        </li>
+
+                                                        <li><strong>Transforming:</strong>
+                                                            <ul>
+                                                                <li>If <code>X</code> and <code>y</code> have an exponential relationship, transform <code>y</code> with <code>log(y)</code>. This transformation can linearize the relationship between <code>X</code> and <code>y</code>.</li>
+                                                                <li>This approach allows us to use linear regression techniques to analyze the data, such as hypothesis testing.</li>
+                                                                <div class="image-container">
+                                                                    <img src="images/transforming.png" alt="Transforming" style="max-width: 55%;">
+                                                                </div>
+                                                                <li>The idea is to transform a non-linear relationship into a linear one, which simplifies the analysis, and then transform the results back to the original scale.</li>
+                                                                <li><strong>Example:</strong></li>
+                                                                <div class="image-container">
+                                                                    <img src="images/transforming example.png" alt="Transforming Example" style="max-width: 70%;">
+                                                                </div>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </div>
 
                                         <div class="section">
                                             <h2>Probability</h2>
-                                            <ul>
-                                                <li><strong>Probability Rules:</strong> Basic principles for calculating probabilities.</li>
-                                                <li><strong>Bayes Theorem:</strong> Describes the probability of an event based on prior knowledge.</li>
-                                                <li><strong>Combinations and Permutations:</strong> Methods for counting and arranging objects.</li>
-                                            </ul>
+                                                <h3>Probability Rules</h3>
+                                                <ul>
+                                                    <li>Every probability is between 0 and 1.</li>
+                                                    <li>The sum of the probabilities of all possible outcomes equals 1.</li>
+                                                    <li>If an event is impossible, it has a probability of 0.</li>
+                                                    <li>Conversely, certain events have a probability of 1.</li>
+                                                </ul>
+
+                                                <h3>The Four Probability Rules</h3>
+                                                <ul>
+                                                    <ol>
+                                                        <li><strong>Addition Rule</strong>
+                                                            <ul>
+                                                                <li>The addition rule in probability says that if there are two events, A and B, which cannot happen at the same time, then the probability of either event happening is equal to the total of their probabilities.</li>
+                                                                <li>This means that if the events are independent, we can add their probabilities to calculate the overall probability of either event happening.</li>
+                                                                <li>Formula: 
+                                                                    <div class="image-container">
+                                                                        <img src="images/Addition rule.png" alt="Addition Rule" style="max-width: 45%;">
+                                                                    </div>
+                                                                </li>
+                                                                <li>Example: Consider a single toss of a fair coin. The probability of getting heads or tails is: <code>P(heads or tails) = 1/2 + 1/2 = 1</code></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><strong>Complementary Rule</strong>
+                                                            <ul>
+                                                                <li>The complementary rule of probability says that when the probability of event A is represented by <code>p</code>, then the probability of event A not happening is represented by <code>1 - p</code>.</li>
+                                                                <li>Formula: 
+                                                                    <div class="image-container">
+                                                                        <img src="images/Complementary rule.png" alt="Complementary Rule" style="max-width: 30%;">
+                                                                    </div>
+                                                                </li>
+                                                                <li>Example: The probability of getting a 2 on a standard six-sided die is 1/6. The probability of getting other than 2 is: <code>P(not 2) = 1 - 1/6 = 5/6</code></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><strong>Conditional Rule</strong>
+                                                            <ul>
+                                                                <li>Bayes theorem helps us calculate the conditional probability of the given events. Now let’s look at the formula and the example to make it clearer.</li>
+                                                                <li>Formula: 
+                                                                    <div class="image-container">
+                                                                        <img src="images/Conditional rule.png" alt="Conditional Rule" style="max-width: 35%;">
+                                                                    </div>
+                                                                </li>
+                                                                <li>Example: A medical test for a certain disease has a false positive rate of 5% and a false negative rate of 10%. If 1% of the population has the disease, what is the probability that a person who tests positive actually has the disease?</li>
+                                                                <li>We can calculate the probability that a person who tests positive actually has the disease as follows:: 
+                                                                    <div class="image-container">
+                                                                        <img src="images/Conditional rule2.png" alt="Conditional Rule" style="max-width: 65%;">
+                                                                    </div>
+                                                                    <div class="image-container">
+                                                                        <img src="images/conditional rule3.png" alt="Conditional Rule" style="max-width: 70%;">
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><strong>Multiplication Rule</strong>
+                                                            <ul>
+                                                                <li>If events A and B are not related to each other, they are called independent events. In such cases, the probability of both events happening together is equal to the product of their individual probabilities.</li>
+                                                                <li>Formula: 
+                                                                    <div class="image-container">
+                                                                        <img src="images/Multiplication rule.png" alt="Multiplication Rule">
+                                                                    </div>
+                                                                </li>
+                                                                <li>Example: Let’s assume that you are drawing two cards from a standard deck of 52 cards. The probability of drawing an ace on the first draw is 4/52. The probability of drawing another ace on the second draw (assuming you did not replace the first card) is 3/51. The probability of drawing two aces is: <code>P(A and B) = 4/52 ⋅ 3/51 = 1/221</code></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ol>
+                                                </ul>
+
+                                                <h3>Bayes Theorem</h3>
+                                                <ul class="compact-list">
+                                                    <li>Bayes theorem is a conditional probability statement, essentially it looks at the probability of one event (B) happening given that another event (A) has already happened. The formula is as follows:</li>
+                                                    <li>Formula: 
+                                                        <div class="image-container">
+                                                            <img src="images/Bayes1.png" alt="Bayes Theorem" style="max-width: 30%;">
+                                                        </div>
+                                                        <ul>
+                                                            <li><code>P(A) is the prior, which is the probability of A being true.</code></li>
+                                                            <li><code>P(B|A) is the likelihood, the probability of B being true given A.</code></li>
+                                                            <li><code>P(B) is the marginalization or the normalizing constant.</code></li>
+                                                            <li><code>P(A|B) is the posterior.</code></li>
+                                                        </ul>
+                                                    </li>
+                                                    
+                                                    <li>What you’ll find in a lot of practice problems is that the normalizing constant, <code>P(B)</code>, is not given. In these cases, you can use the alternative version of Bayes Theorem, which is below:</li>
+                                                    <li>Formula: 
+                                                        <div class="image-container">
+                                                            <img src="images/Bayes2.png" alt="Bayes Theorem">
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                                <h3>Combinations and Permutations</h3>
+                                                <p>Combinations and permutations are two slightly different ways that you can select objects from a set to form a subset. Permutations take into consideration the order of the subset whereas combinations do not.</p>
+                                                <h4>Permutations</h4>
+                                                <ul>
+                                                    <li><strong>Definition:</strong> A permutation of <code>n</code> elements is any arrangement of those <code>n</code> elements in a definite order. There are <code>n!</code> ways to arrange <code>n</code> elements. Note the bold: order matters!</li>
+                                                    <li>The number of permutations of <code>n</code> things taken <code>r</code>-at-a-time is defined as the number of <code>r</code>-tuples that can be taken from <code>n</code> different elements and is equal to the following equation:</li>
+                                                    <li>Formula: <code>P(n, r) = n! / (n - r)!</code></li>
+                                                    <li><strong>Example Question:</strong> How many permutations does a license plate have with 6 digits?</li>
+                                                    <li>Answer: <code>P(9, 6) = 9! / (9 - 6)! = 60,480</code></li>
+                                                </ul>
+                                                <h4>Combinations</h4>
+                                                <ul>
+                                                    <li><strong>Definition:</strong> The number of ways to choose <code>r</code> out of <code>n</code> objects where order doesn’t matter.</li>
+                                                    <li>The number of combinations of <code>n</code> things taken <code>r</code>-at-a-time is defined as the number of subsets with <code>r</code> elements of a set with <code>n</code> elements and is equal to the following equation:</li>
+                                                    <li>Formula: <code>C(n, r) = n! / [(n - r)! r!]</code></li>
+                                                    <li><strong>Example Question:</strong> How many ways can you draw 6 cards from a deck of 52 cards?</li>
+                                                    <li>Answer: <code>C(52, 6) = 52! / [(52 - 6)! 6!] = 20,358,520</code></li>
+                                                </ul>
                                         </div>
                                     
-                                        <div class="section">
-                                            <h2>Advanced Topics</h2>
-                                            <ul>
-                                                <li><strong>Bayesian Methods:</strong> Statistical methods that involve updating probabilities based on new evidence.</li>
-                                            </ul>
-                                        </div>
-                                        <!-- <li><strong>Population Variance:</strong> Calculated by dividing by N (the number of data points).</li>
-                                                <li><strong>Sample Variance:</strong> Calculated by dividing by N-1 to avoid bias.</li>
-                                                <li><strong>Mean Absolute Deviation:</strong> Average distance between each data point and the mean.</li>
-                                                <li><strong>Z-Score:</strong> Measures how many standard deviations a data point is from the mean.</li>
-                                                <li><strong>Mean Shift and Scale:</strong> Adding a constant shifts the mean and median; multiplying scales all measures.</li>
-                                                <li><strong>Density Curve:</strong> Represents the distribution of data points.</li>
-                                                <li><strong>Normal Distribution (Empirical Rule):</strong> 68% within 1 SD, 95% within 2 SD, 99.7% within 3 SD.</li> -->
-                                        
-                                                <!-- <div class="section">
-                                            <h2>Regression and Correlation</h2>
-                                            <ul>
-                                                <li><strong>Correlation Coefficient:</strong> Measures the strength and direction of the linear relationship between two variables.</li>
-                                                <li><strong>Linear Regression:</strong> Uses a line to summarize the relationship between variables. Key metrics include slope, residuals, and Sum of Squared Residuals (SSR).</li>
-                                                <li><strong>R-Squared:</strong> Indicates the percentage of variation in Y explained by X. Calculated as 1 - (SSR/SST).</li>
-                                                <li><strong>Root Mean Square Error (RMSD):</strong> Standard deviation of residuals. Lower RMSD indicates a better model.</li>
-                                                <li><strong>Residual Plot:</strong> Evaluates the fit of a regression model. Evenly scattered points suggest a good model.</li>
-                                            </ul>
-                                        </div>
-                                
-                                        <div class="section">
-                                            <h2>Advanced Topics</h2>
-                                            <ul>
-                                                <li><strong>Combining Random Variables:</strong> When combined, normally distributed variables remain normally distributed.</li>
-                                                <li><strong>Binomial Distribution:</strong> Describes the number of successes in a fixed number of trials. The expected value is np and variance is np(1-p).</li>
-                                                <li><strong>Central Limit Theorem:</strong> The distribution of sample means approximates a normal distribution as sample size increases.</li>
-                                                <li><strong>Confidence Intervals:</strong> Provide a range of plausible values for a population parameter. Calculated using sample means and standard errors.</li>
-                                                <li><strong>Significance Tests:</strong> Tests null hypotheses against alternative hypotheses. Calculated using p-values and significance levels (α).</li>
-                                                <li><strong>Chi-Square Test:</strong> Measures the difference between observed and expected frequencies. Useful for categorical data analysis.</li>
-                                                <li><strong>ANOVA:</strong> Compares means across multiple groups to determine if there are significant differences.</li>
-                                            </ul>
-                                        </div>
-
-                                       -->
 
                                         <div class="section">
-                                        <h2>Courses Attended</h2>
+                                            <h2>Courses Attended</h2>
                                             <h3>Georgetown University (DSAN Program):</h3>
                                             <ul>
                                                 <li>Probabilistic Modeling and Statistical Computing</li>
@@ -873,7 +1067,9 @@ p-value: 2.86e-91</code></pre>
                                             <ul>
                                                 <li>Statistics and Probability</li>
                                             </ul>
+                                            <p>Reference: <a href="https://www.stratascratch.com/blog/a-comprehensive-statistics-cheat-sheet-for-data-science-interviews/#probability_rules">StrataScratch: A Comprehensive Statistics Cheat Sheet for Data Science Interviews</a></p>
                                         </div>
+
                                     </div>
                                     
 									
