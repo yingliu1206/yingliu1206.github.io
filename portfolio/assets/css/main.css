@@ -2329,3 +2329,53 @@ button,
   transform: translateY(-50%);
 }
 
+/* Table of contents */
+.table-content {
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0; /* Remove default padding */
+}
+
+.table-content li {
+  padding: 2px 0; 
+  margin-bottom: 0; /* Reduce or remove the space below the inner list */
+  padding-bottom: 0; /* Remove any padding from the bottom */
+  border-bottom: 1px solid #e0e0e0; /* Add subtle border to separate sections */
+}
+
+.table-content a {
+  border: none; /* Remove any border */
+}
+
+/* Styling for main sections */
+.table-content > li > a {
+  color: #007bff; /* Main section link color (blue) */
+  font-weight: bold; /* Make main sections bold */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Styling for subsections */
+.sub-list {
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 20px; /* Indent for subsections */
+  margin: 0; /* Remove any default margins */
+}
+
+/* Inner list items (sub-list) */
+.sub-list li {
+  margin: 0; /* Remove all margins */
+  padding: 2px 0; /* Space above and below the inner list items */
+}
+
+/* Anchor styles for sub-list items */
+.sub-list li > a {
+  color: #5a5a5a; /* Subsection link color (gray) */
+  font-weight: normal; /* Keep subsections normal weight */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect for sub-list items */
+.sub-list li > a:hover {
+  color: #333333; /* Darker gray on hover */
+}
+
+
