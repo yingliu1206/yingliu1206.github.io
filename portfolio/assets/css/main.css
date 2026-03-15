@@ -2378,4 +2378,24 @@ button,
   color: #333333; /* Darker gray on hover */
 }
 
+.job-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #e67e22;
+}
+
+.role-block {
+  margin-top: 15px;
+  border-left: 3px solid #bdc3c7;
+  padding-left: 15px;
+}
+
+.tagline {
+  display: block;
+  font-style: italic;
+  color: #7f8c8d;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  margin-top: 2px;
+}
 
